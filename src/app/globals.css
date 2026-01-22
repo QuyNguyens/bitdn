@@ -1,13 +1,36 @@
-@import "tailwindcss";
+@import 'tailwindcss';
+@plugin './hero.ts';
+@source '../../node_modules/@heroui/theme/dist/**/*.{js,ts,jsx,tsx}';
+@custom-variant dark (&:is(.dark *));
 
 :root {
-  --background: #ffffff;
+  --background: #f9fafb;
   --foreground: #171717;
+  --primary: #1761b6;
+}
+
+header {
+  padding-inline: 0 !important;
+  max-width: 1200px;
+  gap: 50px;
+}
+
+::-webkit-scrollbar {
+  height: 0.25rem;
+  width: 0.25rem;
+  background-color: hsla(0, 0%, 45%, 0.2);
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 9999px;
+  background-color: hsla(0, 0%, 45%, 0.5);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+
+  --color-primary: var(--primary);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
