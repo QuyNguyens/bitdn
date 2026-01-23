@@ -5,7 +5,7 @@ export const ROUTES = {
   home: '/',
   aboutUs: '/about-us',
   service: '/service',
-  news: '/news',
+  contact: '/contact',
   career: '/carer',
 };
 
@@ -23,8 +23,8 @@ export const MENU_ITEMS: MenuItem[] = [
     href: ROUTES.service,
   },
   {
-    label: 'menu.news',
-    href: ROUTES.news,
+    label: 'menu.contact',
+    href: ROUTES.contact,
   },
   {
     label: 'menu.career',

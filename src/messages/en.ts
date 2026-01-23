@@ -3,7 +3,7 @@ export default {
     home: 'Home',
     aboutUs: 'About Us',
     service: 'Services',
-    news: 'News',
+    contact: 'Contact',
     career: 'Careers',
   },
   banner: {

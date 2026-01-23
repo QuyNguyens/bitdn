@@ -3,7 +3,7 @@ export default {
     home: 'ホーム',
     aboutUs: '会社情報',
     service: 'サービス',
-    news: 'ニュース',
+    contact: 'お問い合わせ',
     career: '採用情報',
   },
   banner: {

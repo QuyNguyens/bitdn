@@ -5,7 +5,7 @@ type WrapComponentProps = {
 };
 
 const WrapComponent = ({ children }: WrapComponentProps) => {
-  return <div className="w-full bg-gray-100 py-10 flex justify-center">{children}</div>;
+  return <div className="w-full py-10 flex justify-center">{children}</div>;
 };
 
 export default WrapComponent;

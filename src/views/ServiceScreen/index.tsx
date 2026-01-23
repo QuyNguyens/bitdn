@@ -1,9 +1,14 @@
-import React from 'react';
+'use client';
+import Service from '../HomeScreen/components/Service';
 
 type Props = {};
 
 const ServiceScreen = (props: Props) => {
-  return <div>ServiceScreen</div>;
+  return (
+    <div>
+      <Service />
+    </div>
+  );
 };
 
 export default ServiceScreen;

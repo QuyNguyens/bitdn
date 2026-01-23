@@ -3,7 +3,7 @@ export default {
     home: 'Trang chủ',
     aboutUs: 'Thông tin công ty',
     service: 'Dịch vụ',
-    news: 'Tin tức',
+    contact: 'Liên hệ',
     career: 'Tuyển dụng',
   },
   banner: {

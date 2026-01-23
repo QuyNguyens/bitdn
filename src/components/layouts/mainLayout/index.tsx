@@ -1,10 +1,10 @@
 import Footer from './components/Footer';
-import Header from './components/Header/components';
+import HeaderBottom from './components/HeaderBottom';
 
 export default function MainLayout({ children }: { children: React.ReactNode }) {
   return (
     <main className="flex flex-col">
-      <Header />
+      <HeaderBottom />
       {children}
       <Footer />
     </main>

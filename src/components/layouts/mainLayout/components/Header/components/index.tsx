@@ -1,7 +1,7 @@
 'use client';
 
-import HeaderBottom from "./HeaderBottom";
-import TopHeader from "./TopHeader";
+import HeaderBottom from '../../HeaderBottom';
+import TopHeader from './TopHeader';
 
 const Header = () => {
   return (

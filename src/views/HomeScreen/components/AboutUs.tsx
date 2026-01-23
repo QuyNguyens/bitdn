@@ -31,10 +31,10 @@ const AboutUs = () => {
     >
       {/* Title + description */}
       <motion.div variants={fadeUp}>
-        <div className="w-full flex gap-6 items-center">
-          <Divider className="my-4 flex-1" />
+        <div className="w-full flex gap-6 items-center justify-center">
+          <Divider className="my-4 w-20 h-0.5" />
           <h3 className="text-3xl font-bold">{t('about.title')}</h3>
-          <Divider className="my-4 flex-1" />
+          <Divider className="my-4 w-20 h-0.5" />
         </div>
 
         <div className="mt-10 flex justify-center">
@@ -46,12 +46,9 @@ const AboutUs = () => {
       </motion.div>
 
       {/* Cards */}
-      <motion.div
-        className="w-full lg:w-4/5 flex gap-10 px-2 lg:px-0"
-        variants={containerVariants}
-      >
+      <motion.div className="w-full lg:w-4/5 flex gap-10 px-2 lg:px-0" variants={containerVariants}>
         <div className="grid grid-cols-1 gap-6 md:grid-cols-3 w-full">
-          {ABOUT_US_ITEMS.map(item => (
+          {ABOUT_US_ITEMS.map((item) => (
             <motion.div key={item.key} variants={fadeUp}>
               <AboutUsItem
                 image={item.image}

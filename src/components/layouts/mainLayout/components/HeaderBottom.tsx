@@ -12,7 +12,7 @@ import {
 } from '@heroui/react';
 import { MENU_ITEMS } from '@/constants/routes';
 import { usePathname } from 'next/navigation';
-import LanguageSwitcher from '../../LanguageSwitcher';
+import LanguageSwitcher from './LanguageSwitcher';
 import { useI18n } from '@/i18n/I18nProvider';
 import { motion } from 'framer-motion';
 
