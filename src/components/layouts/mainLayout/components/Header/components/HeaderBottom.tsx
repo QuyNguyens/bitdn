@@ -12,11 +12,11 @@ import {
 } from '@heroui/react';
 import { MENU_ITEMS } from '@/constants/routes';
 import { usePathname } from 'next/navigation';
-import LanguageSwitcher from './LanguageSwitcher';
+import LanguageSwitcher from '../../LanguageSwitcher';
 import { useI18n } from '@/i18n/I18nProvider';
 import { motion } from 'framer-motion';
 
-export default function Header() {
+export default function HeaderBottom() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
   const pathname = usePathname();
@@ -30,7 +30,13 @@ export default function Header() {
           className="sm:hidden"
         />
         <NavbarBrand className="h-10 flex items-center">
-          <img src="/logo/logo_bit.jpg" alt="logo bitdn" className="h-8 w-auto object-contain" />
+          <Link href="/" aria-label="Go to home">
+            <img
+              src="/logo/logo_bit.jpg"
+              alt="logo bitdn"
+              className="h-8 w-auto object-contain cursor-pointer"
+            />
+          </Link>
         </NavbarBrand>
       </NavbarContent>
       <NavbarContent className="hidden sm:flex gap-12" justify="center">
@@ -42,7 +48,7 @@ export default function Header() {
               <motion.div className="relative" initial="rest" whileHover="hover" animate="rest">
                 <Link
                   href={item.href}
-                  className={`relative pb-1 ${
+                  className={`relative pb-1 font-medium ${
                     isActive ? 'font-semibold text-gray-950' : 'text-gray-900'
                   }`}
                 >
@@ -56,7 +62,7 @@ export default function Header() {
                     hover: { scaleX: 1 },
                   }}
                   transition={{ duration: 0.3, ease: 'easeInOut' }}
-                  className="absolute left-0 -bottom-1 h-[2px] w-full origin-left bg-primary"
+                  className="absolute left-0 -bottom-1 h-0.5 w-full origin-left bg-primary"
                 />
               </motion.div>
             </NavbarItem>
@@ -79,7 +85,7 @@ export default function Header() {
               href={item.href}
               size="lg"
             >
-              {item.label}
+              {t(item.label)}
             </Link>
           </NavbarMenuItem>
         ))}

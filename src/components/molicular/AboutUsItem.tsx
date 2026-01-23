@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { Button } from '@heroui/react';
 import { motion } from 'framer-motion';
+import { useI18n } from '@/i18n/I18nProvider';
 
 type AboutUsItemProps = {
   image: string;
@@ -9,6 +10,8 @@ type AboutUsItemProps = {
 };
 
 const AboutUsItem = ({ image, title, description }: AboutUsItemProps) => {
+  const { t } = useI18n();
+
   return (
     <motion.div
       whileHover={{ y: -6 }}
@@ -21,30 +24,18 @@ const AboutUsItem = ({ image, title, description }: AboutUsItemProps) => {
         whileHover={{ scale: 1.05 }}
         transition={{ duration: 0.4 }}
       >
-        <Image
-          src={image}
-          alt={title}
-          fill
-          className="object-cover"
-        />
+        <Image src={image} alt={title} fill className="object-cover" />
       </motion.div>
 
       {/* Content */}
       <div className="flex flex-1 flex-col gap-3 p-5">
-        <h3 className="line-clamp-2 text-base font-semibold text-gray-900">
-          {title}
-        </h3>
+        <h3 className="line-clamp-2 text-base font-semibold text-gray-900">{title}</h3>
 
-        <p className="line-clamp-2 text-sm text-gray-600">
-          {description}
-        </p>
+        <p className="line-clamp-2 text-sm text-gray-600">{description}</p>
 
-        <motion.div
-          className="mt-auto flex justify-end"
-          whileHover={{ scale: 1.05 }}
-        >
+        <motion.div className="mt-auto flex justify-end" whileHover={{ scale: 1.05 }}>
           <Button size="sm" color="secondary" className="w-fit">
-            READ MORE...
+            {t('common.readMore').toUpperCase()}...
           </Button>
         </motion.div>
       </div>

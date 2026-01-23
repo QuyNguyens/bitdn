@@ -5,11 +5,14 @@ import { Button } from '@heroui/react';
 import { CircleArrowRight } from 'lucide-react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
+import { useI18n } from '@/i18n/I18nProvider';
 
 const Solution = () => {
+  const { t } = useI18n();
+
   return (
     <WrapComponent>
-      <div className="flex w-full gap-10 lg:w-4/5">
+      <div className="flex flex-col lg:flex-row p-2 w-full gap-10 lg:w-4/5">
         {/* Image */}
         <motion.div
           initial={{ opacity: 0, x: -60 }}
@@ -35,20 +38,11 @@ const Solution = () => {
           transition={{ duration: 0.8, ease: 'easeOut', delay: 0.1 }}
           className="flex flex-col justify-center gap-6"
         >
-          <h3 className="text-2xl font-semibold">
-            Giải pháp công nghệ toàn diện cho doanh nghiệp hiện đại
-          </h3>
+          <h3 className="text-2xl font-semibold">{t('solution.title')}</h3>
 
           <div className="space-y-3 text-gray-700">
-            <p>
-              Chúng tôi là đối tác đáng tin cậy trong việc phát triển phần mềm, thiết kế website, và
-              chuyển đổi số cho các doanh nghiệp trong và ngoài nước.
-            </p>
-            <p>
-              Với đội ngũ kỹ sư dày dạn kinh nghiệm, thành thạo nhiều ngôn ngữ lập trình và am hiểu
-              sâu sắc nghiệp vụ, chúng tôi giúp khách hàng tối ưu quy trình và tạo ra giá trị bền
-              vững qua công nghệ.
-            </p>
+            <p>{t('solution.description1')}</p>
+            <p>{t('solution.description2')}</p>
           </div>
 
           <motion.div
@@ -56,12 +50,8 @@ const Solution = () => {
             whileTap={{ scale: 0.97 }}
             transition={{ type: 'spring', stiffness: 300 }}
           >
-            <Button
-              className="w-fit"
-              color="primary"
-              endContent={<CircleArrowRight />}
-            >
-              Xem thêm
+            <Button className="w-fit" color="primary" endContent={<CircleArrowRight />}>
+              {t('common.readMore')}
             </Button>
           </motion.div>
         </motion.div>

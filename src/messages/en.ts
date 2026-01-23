@@ -80,4 +80,17 @@ export default {
       },
     },
   },
+  solution: {
+    title: 'Comprehensive Technology Solutions for Modern Businesses',
+    description1:
+      'We are a trusted partner in software development, website design, and digital transformation for domestic and international businesses.',
+    description2:
+      'With a team of experienced engineers proficient in multiple programming languages and deep business expertise, we help clients optimize processes and create sustainable value through technology.',
+  },
+  common: {
+    readMore: 'Read more',
+  },
+  footer: {
+    bottom: 'Copyright © BIT DA NANG. All Rights Reserved.',
+  },
 };

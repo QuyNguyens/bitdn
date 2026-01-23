@@ -80,4 +80,17 @@ export default {
       },
     },
   },
+  solution: {
+    title: 'Giải pháp công nghệ toàn diện cho doanh nghiệp hiện đại',
+    description1:
+      'Chúng tôi là đối tác đáng tin cậy trong việc phát triển phần mềm, thiết kế website và chuyển đổi số cho các doanh nghiệp trong và ngoài nước.',
+    description2:
+      'Với đội ngũ kỹ sư dày dạn kinh nghiệm, thành thạo nhiều ngôn ngữ lập trình và am hiểu sâu sắc nghiệp vụ, chúng tôi giúp khách hàng tối ưu quy trình và tạo ra giá trị bền vững qua công nghệ.',
+  },
+  common: {
+    readMore: 'Xem thêm',
+  },
+  footer: {
+    bottom: 'Copyright © BIT DA NANG. All Rights Reserved.',
+  },
 };
