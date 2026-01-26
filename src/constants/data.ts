@@ -6,58 +6,62 @@ export type SelectOption = {
 };
 
 export const JOB_POSITIONS: SelectOption[] = [
-  { key: 'frontend', label: 'Frontend Developer' },
-  { key: 'backend', label: 'Backend Developer' },
-  { key: 'fullstack', label: 'Fullstack Developer' },
+  { key: '', label: '' },
 
-  { key: 'mobile', label: 'Mobile Developer' },
-  { key: 'android', label: 'Android Developer' },
-  { key: 'ios', label: 'iOS Developer' },
+  { key: 'Frontend Developer', label: 'Frontend Developer' },
+  { key: 'Backend Developer', label: 'Backend Developer' },
+  { key: 'Fullstack Developer', label: 'Fullstack Developer' },
 
-  { key: 'qa', label: 'QA / Tester' },
-  { key: 'automation-qa', label: 'Automation QA' },
+  { key: 'Mobile Developer', label: 'Mobile Developer' },
+  { key: 'Android Developer', label: 'Android Developer' },
+  { key: 'iOS Developer', label: 'iOS Developer' },
 
-  { key: 'devops', label: 'DevOps Engineer' },
-  { key: 'cloud', label: 'Cloud Engineer' },
+  { key: 'QA / Tester', label: 'QA / Tester' },
+  { key: 'Automation QA', label: 'Automation QA' },
 
-  { key: 'data', label: 'Data Engineer' },
-  { key: 'data-analyst', label: 'Data Analyst' },
-  { key: 'ml', label: 'Machine Learning Engineer' },
+  { key: 'DevOps Engineer', label: 'DevOps Engineer' },
+  { key: 'Cloud Engineer', label: 'Cloud Engineer' },
 
-  { key: 'game', label: 'Game Developer' },
-  { key: 'embedded', label: 'Embedded Engineer' },
+  { key: 'Data Engineer', label: 'Data Engineer' },
+  { key: 'Data Analyst', label: 'Data Analyst' },
+  { key: 'Machine Learning Engineer', label: 'Machine Learning Engineer' },
 
-  { key: 'tech-lead', label: 'Tech Lead' },
+  { key: 'Game Developer', label: 'Game Developer' },
+  { key: 'Embedded Engineer', label: 'Embedded Engineer' },
+
+  { key: 'Tech Lead', label: 'Tech Lead' },
 ];
 
 /* =======================
    Tỉnh / thành nổi bật ở Việt Nam
 ======================= */
 export const VIETNAM_LOCATIONS: SelectOption[] = [
-  { key: 'hn', label: 'Hà Nội' },
-  { key: 'hcm', label: 'Hồ Chí Minh' },
-  { key: 'dn', label: 'Đà Nẵng' },
-  { key: 'ct', label: 'Cần Thơ' },
-  { key: 'hp', label: 'Hải Phòng' },
-  { key: 'bd', label: 'Bình Dương' },
-  { key: 'dna', label: 'Đồng Nai' },
-  { key: 'qn', label: 'Quảng Ninh' },
-  { key: 'kh', label: 'Khánh Hòa' },
-  { key: 'vt', label: 'Bà Rịa - Vũng Tàu' },
+  { key: '', label: '' },
+  { key: 'Hà Nội', label: 'Hà Nội' },
+  { key: 'Hồ Chí Minh', label: 'Hồ Chí Minh' },
+  { key: 'Đà Nẵng', label: 'Đà Nẵng' },
+  { key: 'Cần Thơ', label: 'Cần Thơ' },
+  { key: 'Hải Phòng', label: 'Hải Phòng' },
+  { key: 'Bình Dương', label: 'Bình Dương' },
+  { key: 'Đồng Nai', label: 'Đồng Nai' },
+  { key: 'Quảng Ninh', label: 'Quảng Ninh' },
+  { key: 'Khánh Hòa', label: 'Khánh Hòa' },
+  { key: 'Bà Rịa - Vũng Tàu', label: 'Bà Rịa - Vũng Tàu' },
 ];
 
 /* =======================
    Cấp bậc / vị trí (Intern → Senior)
 ======================= */
 export const JOB_LEVELS: SelectOption[] = [
-  { key: 'intern', label: 'Intern' },
-  { key: 'fresher', label: 'Fresher' },
-  { key: 'junior', label: 'Junior' },
-  { key: 'middle', label: 'Middle' },
-  { key: 'senior', label: 'Senior' },
-  { key: 'lead', label: 'Team Lead' },
-  { key: 'principal', label: 'Principal' },
-  { key: 'manager', label: 'Engineering Manager' },
+  { key: '', label: '' },
+  { key: 'Intern', label: 'Intern' },
+  { key: 'Fresher', label: 'Fresher' },
+  { key: 'Junior', label: 'Junior' },
+  { key: 'Middle', label: 'Middle' },
+  { key: 'Senior', label: 'Senior' },
+  { key: 'Team Lead', label: 'Team Lead' },
+  { key: 'Principal', label: 'Principal' },
+  { key: 'Engineering Manager', label: 'Engineering Manager' },
 ];
 
 export const JOBS: JobDetail[] = [
@@ -70,6 +74,7 @@ export const JOBS: JobDetail[] = [
     category: 'IT',
     workType: 'Hybrid',
     location: 'Hà Nội, Việt Nam',
+    locationMatch: 'Hà Nội',
     postedDate: 'Nov 24',
 
     keyResponsibilities: [
@@ -103,6 +108,7 @@ export const JOBS: JobDetail[] = [
     category: 'IT',
     workType: 'On-site',
     location: 'Hồ Chí Minh, Việt Nam',
+    locationMatch: 'Hồ Chí Minh',
     postedDate: 'Dec 01',
 
     keyResponsibilities: [
@@ -135,7 +141,8 @@ export const JOBS: JobDetail[] = [
     employmentType: 'Full-time',
     category: 'IT',
     workType: 'Remote',
-    location: 'Việt Nam',
+    location: 'Đà Nẵng, Việt Nam',
+    locationMatch: 'Đà Nẵng',
     postedDate: 'Dec 10',
 
     keyResponsibilities: [

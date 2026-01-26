@@ -30,8 +30,8 @@ export default {
   about: {
     title: '私たちについて',
     description: [
-      'BITダナンは、情熱あふれる若いチームとして、企業のニーズに合わせたソフトウェア、Webサイト、モバイルアプリケーションの開発を提供しています。単なるコーディングにとどまらず、お客様の実際の課題を深く理解し、実用性が高く、運用しやすく、拡張性のあるテクノロジー製品を構築します。',
-      '私たちは、テクノロジーは単なるツールではなく、企業の持続的な成長と競争優位性を支える基盤であると考えています。多様な分野での実践経験を活かし、BITダナンは企画・コンサルティングから開発、導入、運用まで一貫してお客様をサポートします。',
+      'Bit Da Nangは、情熱あふれる若いチームとして、企業のニーズに合わせたソフトウェア、Webサイト、モバイルアプリケーションの開発を提供しています。単なるコーディングにとどまらず、お客様の実際の課題を深く理解し、実用性が高く、運用しやすく、拡張性のあるテクノロジー製品を構築します。',
+      '私たちは、テクノロジーは単なるツールではなく、企業の持続的な成長と競争優位性を支える基盤であると考えています。多様な分野での実践経験を活かし、Bit Da Nangは企画・コンサルティングから開発、導入、運用まで一貫してお客様をサポートします。',
     ],
   },
   features: {
@@ -52,7 +52,7 @@ export default {
     },
   },
   whyChooseUs: {
-    title: 'BITダナンが選ばれる理由',
+    title: 'Bit Da Nangが選ばれる理由',
     items: {
       solution: {
         title: '要件に合わせたソリューション',
@@ -141,22 +141,16 @@ export default {
   company: {
     name: '会社名',
     nameValue: 'BIT DNジャパンホールディングス株式会社',
-    nameEn: 'BITDN Japan Holdings Co., Ltd.',
+    nameEn: 'Bit Da Nang Co., Ltd.',
 
     ceo: '代表者',
-    ceoValue: 'ド・ヴァン・カック',
-
-    shareholder: '株主',
-    shareholderValue: 'BITDNソフトウェア 100%出資',
-
-    capital: '資本金',
-    capitalValue: '23億円（2025年6月13日 増資）',
+    ceoValue: 'Pham Van Nam',
 
     founded: '設立',
-    foundedValue: '2005年11月',
+    foundedValue: '2024年03月',
 
     employees: '社員数',
-    employeesValue: '連結5,000名',
+    employeesValue: '連結45名',
     employeesNote: '※パートナー含む',
 
     profileDownload: '会社概要 ダウンロード',
@@ -165,13 +159,13 @@ export default {
     video: '会社紹介ビデオ こちら',
     videoDate: '（2025年5月）',
     profile: '会社概要',
-    title: 'BitDN ジャパン ホールディングス',
+    title: 'Bit Da Nang ジャパン ホールディングス',
     description:
       '先進技術と多彩な人材、オフショア開発とニアショア開発の利点を融合させた“ベストショアモデル”で、お客様のビジネスをエンドツーエンドで支援します',
   },
   footer: {
     headquarter: '本社',
-    registeredOffice: '登録住所',
+    registeredOffice: '住所',
     phone: '電話番号',
     getDirection: 'アクセス',
     accompanyTitle: '私たちがサポートします',
@@ -181,11 +175,9 @@ export default {
       contact: 'お問い合わせ',
       careers: '採用情報',
     },
-    companyName: 'BitDNソフトウェア有限会社',
+    companyName: 'Bit Da Nangソフトウェア株式会社',
     registeredOfficeFull:
       '37 Thanh Vinh 10, Hoa Khanh Bac Ward, Lien Chieu District, Da Nang, Vietnam',
-    contentManagement: 'コンテンツ管理責任者：BitDNソフトウェア有限会社（BR No. 0101601092）',
-    hotline: 'ホットライン',
     contactUs: 'お問い合わせ',
   },
 };

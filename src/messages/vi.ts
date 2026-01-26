@@ -141,31 +141,20 @@ export default {
   },
   company: {
     name: 'Tên công ty',
-    nameValue: 'Công ty TNHH BIT DN Japan Holdings',
+    nameValue: 'Công ty TNHH BIT DA NANG',
 
     ceo: 'Người đại diện',
-    ceoValue: 'Đỗ Văn Khắc',
-
-    shareholder: 'Cổ đông',
-    shareholderValue: 'BITDN Software sở hữu 100%',
-
-    capital: 'Vốn điều lệ',
-    capitalValue: '2.3 tỷ Yên (tăng vốn ngày 13/06/2025)',
+    ceoValue: 'Phạm Văn Nam',
 
     founded: 'Thành lập',
-    foundedValue: 'Tháng 11 năm 2005',
+    foundedValue: 'Tháng 3 năm 2024',
 
     employees: 'Nhân sự',
-    employeesValue: '5.000 người (hợp nhất)',
+    employeesValue: '45 người',
     employeesNote: '*Bao gồm đối tác',
-
-    profileDownload: 'Tải hồ sơ công ty',
-    profileDate: '(Tháng 01/2026)',
-
-    video: 'Video giới thiệu công ty',
-    videoDate: '(Tháng 05/2025)',
+    
     profile: 'Hồ sơ công ty',
-    title: 'BitDN Japan Holdings',
+    title: 'Bit Da Nang',
     description:
       'Chúng tôi hỗ trợ doanh nghiệp của khách hàng một cách toàn diện từ đầu đến cuối thông qua “Mô hình Bestshore”, kết hợp công nghệ tiên tiến, nguồn nhân lực đa dạng, cùng lợi thế của phát triển offshore và nearshore',
   },
@@ -181,11 +170,8 @@ export default {
       contact: 'Liên hệ',
       careers: 'Tuyển dụng',
     },
-    companyName: 'Công ty TNHH Phần mềm BitDN',
+    companyName: 'Công ty TNHH Phần mềm Bit Da Nang',
     registeredOfficeFull: '37 Thanh Vinh 10, Hoà Khánh Bắc, Liên Chiểu, Đà Nẵng, Việt Nam',
-    contentManagement:
-      'Chịu trách nhiệm quản lý nội dung: Công ty TNHH Phần mềm BitDN, BR No. 0101601092',
-    hotline: 'Hotline',
     contactUs: 'Liên hệ',
   },
 };

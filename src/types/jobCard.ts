@@ -29,6 +29,7 @@ export type JobDetail = {
   category: string;
   workType: 'On-site' | 'Remote' | 'Hybrid';
   location: string;
+  locationMatch: string;
   postedDate: string;
 
   keyResponsibilities: string[];

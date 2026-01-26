@@ -18,10 +18,16 @@ const CarerScreen = () => {
     level: '',
   });
 
+  const [appliedFilter, setAppliedFilter] = useState<JobFilterValues>(filter);
+
+  const handleSubmit = () => {
+    setAppliedFilter(filter);
+  };
+
   return (
     <div className="flex flex-col gap-10">
-      <Banner filter={filter} setFilter={setFilter} />
-      <JobItems />
+      <Banner filter={filter} setFilter={setFilter} handleSubmit={handleSubmit} />
+      <JobItems filter={appliedFilter} />
     </div>
   );
 };

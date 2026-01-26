@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'BitDN',
+  title: 'Bit Da Nang',
   description: 'Công ty Bit Đà Nẵng',
 };
 

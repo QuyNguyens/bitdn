@@ -19,7 +19,7 @@ const CompanyInfoCard = () => {
         <div className="relative rounded-2xl overflow-hidden">
           <Image
             src="/images/companyInfo.png" // đổi path theo project
-            alt="FPT Japan Holdings"
+            alt="Bit Da Nang"
             fill
             className="object-cover"
             priority
@@ -33,22 +33,11 @@ const CompanyInfoCard = () => {
               <span className="font-semibold">{t('company.name')}：</span>
               {t('company.nameValue')}
               <br />
-              <span className="text-gray-600">({t('company.nameEn')})</span>
             </li>
 
             <li>
               <span className="font-semibold">{t('company.ceo')}：</span>
               {t('company.ceoValue')}
-            </li>
-
-            <li>
-              <span className="font-semibold">{t('company.shareholder')}：</span>
-              {t('company.shareholderValue')}
-            </li>
-
-            <li>
-              <span className="font-semibold">{t('company.capital')}：</span>
-              {t('company.capitalValue')}
             </li>
 
             <li>
@@ -62,19 +51,6 @@ const CompanyInfoCard = () => {
               <span className="text-gray-500"> {t('company.employeesNote')}</span>
             </li>
 
-            <li className="pt-2">
-              <Link href="/#" className="text-orange-600 hover:underline font-medium">
-                {t('company.profileDownload')}
-              </Link>
-              <span className="text-gray-500"> {t('company.profileDate')}</span>
-            </li>
-
-            <li>
-              <Link href="/#" className="text-orange-600 hover:underline font-medium">
-                {t('company.video')}
-              </Link>
-              <span className="text-gray-500"> {t('company.videoDate')}</span>
-            </li>
           </ul>
         </div>
       </div>

@@ -140,22 +140,16 @@ export default {
   },
   company: {
     name: 'Company Name',
-    nameValue: 'BIT DN Japan Holdings Co., Ltd.',
+    nameValue: 'BIT DA NANG Co., Ltd.',
 
     ceo: 'Representative',
-    ceoValue: 'Do Van Khac',
-
-    shareholder: 'Shareholder',
-    shareholderValue: '100% invested by BITDN Software',
-
-    capital: 'Capital',
-    capitalValue: 'JPY 2.3 billion (Increased on June 13, 2025)',
+    ceoValue: 'Pham Van Nam',
 
     founded: 'Founded',
-    foundedValue: 'November 2005',
+    foundedValue: 'March 2024',
 
     employees: 'Employees',
-    employeesValue: '5,000 (Consolidated)',
+    employeesValue: '45 People',
     employeesNote: '*Including partners',
 
     profileDownload: 'Download Company Profile',
@@ -165,7 +159,7 @@ export default {
     videoDate: '(May 2025)',
     profile: 'Company Profile',
 
-    title: 'BitDN Japan Holdings',
+    title: 'Bit Da Nang',
     description:
       'We support our customers’ businesses end-to-end through the “Bestshore Model”, which combines advanced technologies, diverse talent, and the strengths of offshore and nearshore development.',
   },
@@ -181,12 +175,9 @@ export default {
       contact: 'Contact',
       careers: 'Careers',
     },
-    companyName: 'FPT Software Company Limited',
+    companyName: 'Bit Da Nang Software Company Limited',
     registeredOfficeFull:
       '37 Thanh Vinh 10, Hoa Khanh Bac Ward, Lien Chieu District, Da Nang, Vietnam',
-    contentManagement:
-      'Content Management Responsibility: FPT Software Company Limited, BR No. 0101601092',
-    hotline: 'Hotline',
     contactUs: 'Contact us',
   },
 };

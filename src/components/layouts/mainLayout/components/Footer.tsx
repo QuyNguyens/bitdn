@@ -24,7 +24,7 @@ const Footer = () => {
               <UserItem
                 icon={PhoneIcon}
                 title={t('footer.phone')}
-                description="(+84) 243 768 9048"
+                description="(+84) 934 845 393"
               />
               <Button
                 className="bg-black/90 text-white w-fit border border-gray-300"
@@ -61,12 +61,8 @@ const Footer = () => {
             <div className="flex flex-col gap-2 mt-3">
               <h2> {t('footer.companyName')}</h2>
               <p className="text-xs text-gray-300">
-                <span>{t('footer.registeredOffice')}: </span>FPT Cau Giay Building, Duy Tan Street,
-                Cau Giay Ward, Hanoi City, Vietnam
-              </p>
-              <p className="text-xs text-gray-300">{t('footer.contentManagement')}</p>
-              <p className="text-xs text-gray-300">
-                <span>{t('footer.hotline')}: </span> (+84) 243 768 9048
+                <span>{t('footer.registeredOffice')}: </span>
+                {t('footer.registeredOfficeFull')}
               </p>
               <Button
                 onClick={() => {

@@ -9,8 +9,9 @@ import { JOB_LEVELS, JOB_POSITIONS, VIETNAM_LOCATIONS } from '@/constants/data';
 type BannerProps = {
   filter: JobFilterValues;
   setFilter: (value: JobFilterValues) => void;
+  handleSubmit: () => void;
 };
-const Banner = ({ filter, setFilter }: BannerProps) => {
+const Banner = ({ filter, setFilter, handleSubmit }: BannerProps) => {
   const { t } = useI18n();
 
   return (
@@ -32,7 +33,7 @@ const Banner = ({ filter, setFilter }: BannerProps) => {
         <JobSearchFilter
           value={filter}
           onChange={setFilter}
-          onSubmit={() => console.log(filter)}
+          onSubmit={handleSubmit}
           positions={JOB_POSITIONS}
           locations={VIETNAM_LOCATIONS}
           levels={JOB_LEVELS}
