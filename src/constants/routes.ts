@@ -6,7 +6,7 @@ export const ROUTES = {
   aboutUs: '/about-us',
   service: '/service',
   contact: '/contact',
-  career: '/carer',
+  career: '/career',
 };
 
 export const MENU_ITEMS: MenuItem[] = [

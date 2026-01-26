@@ -4,6 +4,8 @@ import { LAYOUT_CONFIG } from './layout-config';
 import { usePathname } from 'next/navigation';
 import MainLayout from '../mainLayout';
 import { HeroUIProvider } from '@heroui/system';
+import GlobalLoading from '@/components/molicular/GlobalLoading';
+import { ToastProvider } from '@heroui/react';
 
 export default function InitLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   const pathname = usePathname();
@@ -25,7 +27,11 @@ export default function InitLayout({ children }: Readonly<{ children: React.Reac
 
   return (
     <HeroUIProvider>
-      {renderLayout()}
+      <ToastProvider placement="top-center" />
+      <>
+        <GlobalLoading />
+        {renderLayout()}
+      </>
     </HeroUIProvider>
   );
 }

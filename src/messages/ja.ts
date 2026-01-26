@@ -87,10 +87,105 @@ export default {
     description2:
       '豊富な経験を持ち、複数のプログラミング言語に精通し、業務知識にも深く精通したエンジニアチームが、プロセス最適化と持続可能な価値創出をテクノロジーで支援します。',
   },
+  contact: {
+    description: 'ビジネス向けソフトウェアソリューションの実現に向けて、私たちにご相談ください。',
+    header1: '私たちと',
+    header2: 'ご連絡ください',
+    title: '以下のフォームにご記入のうえ、ご意見をお聞かせください。',
+    afterSubmitTitle: 'フォーム送信後の流れ',
+    afterSubmitItems: [
+      '送信内容の確認メールをお送りします。ご依頼内容の複雑さに応じて、24〜72時間以内に担当者よりご連絡いたします。',
+      'ビジネスニーズについて詳しくお伺いするため、お打ち合わせまたはお電話の日時を調整いたします。',
+    ],
+    firstName: {
+      label: '名*',
+      placeholder: 'お名前（名）',
+    },
+    lastName: {
+      label: '姓*',
+      placeholder: 'お名前（姓）',
+    },
+    email: {
+      label: 'メールアドレス*',
+      placeholder: '会社のメールアドレス',
+      error: '有効なメールアドレスを入力してください',
+    },
+    country: {
+      label: '国',
+    },
+    company: {
+      label: '会社名*',
+      placeholder: '会社名を入力してください',
+    },
+    jobTitle: {
+      label: '役職*',
+      placeholder: 'あなたの役職',
+    },
+    phone: {
+      label: '電話番号',
+      placeholder: '連絡先電話番号',
+    },
+    businessNeeds: {
+      label: 'ご相談内容*',
+      placeholder: 'ビジネスのご要望についてご記入ください',
+    },
+    actions: {
+      reset: 'リセット',
+      submit: 'お問い合わせ',
+    },
+  },
   common: {
     readMore: 'もっと見る',
+    contact: 'お問い合わせ',
+  },
+  company: {
+    name: '会社名',
+    nameValue: 'BIT DNジャパンホールディングス株式会社',
+    nameEn: 'BITDN Japan Holdings Co., Ltd.',
+
+    ceo: '代表者',
+    ceoValue: 'ド・ヴァン・カック',
+
+    shareholder: '株主',
+    shareholderValue: 'BITDNソフトウェア 100%出資',
+
+    capital: '資本金',
+    capitalValue: '23億円（2025年6月13日 増資）',
+
+    founded: '設立',
+    foundedValue: '2005年11月',
+
+    employees: '社員数',
+    employeesValue: '連結5,000名',
+    employeesNote: '※パートナー含む',
+
+    profileDownload: '会社概要 ダウンロード',
+    profileDate: '（2026年1月）',
+
+    video: '会社紹介ビデオ こちら',
+    videoDate: '（2025年5月）',
+    profile: '会社概要',
+    title: 'BitDN ジャパン ホールディングス',
+    description:
+      '先進技術と多彩な人材、オフショア開発とニアショア開発の利点を融合させた“ベストショアモデル”で、お客様のビジネスをエンドツーエンドで支援します',
   },
   footer: {
-    bottom: '© BIT DA NANG 無断転載を禁じます。',
+    headquarter: '本社',
+    registeredOffice: '登録住所',
+    phone: '電話番号',
+    getDirection: 'アクセス',
+    accompanyTitle: '私たちがサポートします',
+    links: {
+      about: '会社概要',
+      service: 'サービス',
+      contact: 'お問い合わせ',
+      careers: '採用情報',
+    },
+    companyName: 'BitDNソフトウェア有限会社',
+    registeredOfficeFull:
+      '37 Thanh Vinh 10, Hoa Khanh Bac Ward, Lien Chieu District, Da Nang, Vietnam',
+    contentManagement: 'コンテンツ管理責任者：BitDNソフトウェア有限会社（BR No. 0101601092）',
+    hotline: 'ホットライン',
+    contactUs: 'お問い合わせ',
   },
 };

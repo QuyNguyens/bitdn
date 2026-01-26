@@ -34,7 +34,7 @@ export default function HeaderBottom() {
             <img
               src="/logo/logo_bit.jpg"
               alt="logo bitdn"
-              className="h-8 w-auto object-contain cursor-pointer"
+              className="h-14 w-auto object-contain cursor-pointer"
             />
           </Link>
         </NavbarBrand>
@@ -45,12 +45,18 @@ export default function HeaderBottom() {
 
           return (
             <NavbarItem key={item.label}>
-              <motion.div className="relative" initial="rest" whileHover="hover" animate="rest">
+              <motion.div
+                className="relative"
+                initial="rest"
+                animate={isActive ? 'hover' : 'rest'}
+                whileHover="hover"
+              >
                 <Link
                   href={item.href}
-                  className={`relative pb-1 font-medium ${
-                    isActive ? 'font-semibold text-gray-950' : 'text-gray-900'
-                  }`}
+                  className={`
+              relative pb-1 font-medium transition-colors
+              ${isActive ? 'text-primary' : 'text-gray-900 hover:text-primary'}
+            `}
                 >
                   {t(item.label)}
                 </Link>
@@ -61,7 +67,7 @@ export default function HeaderBottom() {
                     rest: { scaleX: 0 },
                     hover: { scaleX: 1 },
                   }}
-                  transition={{ duration: 0.3, ease: 'easeInOut' }}
+                  transition={{ duration: 0.25, ease: 'easeInOut' }}
                   className="absolute left-0 -bottom-1 h-0.5 w-full origin-left bg-primary"
                 />
               </motion.div>

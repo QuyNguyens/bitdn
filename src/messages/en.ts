@@ -87,10 +87,106 @@ export default {
     description2:
       'With a team of experienced engineers proficient in multiple programming languages and deep business expertise, we help clients optimize processes and create sustainable value through technology.',
   },
+  contact: {
+    description: 'Connect with us to bring software solutions to life for your business.',
+    header1: 'Get in',
+    header2: 'Touch with Us',
+    title: 'Please complete the form below and share your thoughts with us.',
+    afterSubmitTitle: 'After Submitting Your Form',
+    afterSubmitItems: [
+      'You will receive a confirmation email for your submission. Our representative will contact you within 24–72 hours, depending on the complexity of your request.',
+      'We will schedule a call or meeting to discuss your business needs.',
+    ],
+    firstName: {
+      label: 'First Name*',
+      placeholder: 'First name',
+    },
+    lastName: {
+      label: 'Last Name*',
+      placeholder: 'Last name',
+    },
+    email: {
+      label: 'Email*',
+      placeholder: 'Business email address',
+      error: 'Please enter a valid email',
+    },
+    country: {
+      label: 'Country',
+    },
+    company: {
+      label: 'Company Name*',
+      placeholder: 'Your company name',
+    },
+    jobTitle: {
+      label: 'Job Title*',
+      placeholder: 'Your job title',
+    },
+    phone: {
+      label: 'Phone Number',
+      placeholder: 'Your phone number',
+    },
+    businessNeeds: {
+      label: 'Business Needs*',
+      placeholder: 'Tell us more about your business needs',
+    },
+    actions: {
+      reset: 'Reset',
+      submit: 'Contact us',
+    },
+  },
   common: {
     readMore: 'Read more',
+    contact: 'Contact Us',
+  },
+  company: {
+    name: 'Company Name',
+    nameValue: 'BIT DN Japan Holdings Co., Ltd.',
+
+    ceo: 'Representative',
+    ceoValue: 'Do Van Khac',
+
+    shareholder: 'Shareholder',
+    shareholderValue: '100% invested by BITDN Software',
+
+    capital: 'Capital',
+    capitalValue: 'JPY 2.3 billion (Increased on June 13, 2025)',
+
+    founded: 'Founded',
+    foundedValue: 'November 2005',
+
+    employees: 'Employees',
+    employeesValue: '5,000 (Consolidated)',
+    employeesNote: '*Including partners',
+
+    profileDownload: 'Download Company Profile',
+    profileDate: '(January 2026)',
+
+    video: 'Company Introduction Video',
+    videoDate: '(May 2025)',
+    profile: 'Company Profile',
+
+    title: 'BitDN Japan Holdings',
+    description:
+      'We support our customers’ businesses end-to-end through the “Bestshore Model”, which combines advanced technologies, diverse talent, and the strengths of offshore and nearshore development.',
   },
   footer: {
-    bottom: 'Copyright © BIT DA NANG. All Rights Reserved.',
+    headquarter: 'Headquarter',
+    registeredOffice: 'Registered Office',
+    phone: 'Phone',
+    getDirection: 'Get Direction',
+    accompanyTitle: 'Let Us Accompany You',
+    links: {
+      about: 'About Us',
+      service: 'Service',
+      contact: 'Contact',
+      careers: 'Careers',
+    },
+    companyName: 'FPT Software Company Limited',
+    registeredOfficeFull:
+      '37 Thanh Vinh 10, Hoa Khanh Bac Ward, Lien Chieu District, Da Nang, Vietnam',
+    contentManagement:
+      'Content Management Responsibility: FPT Software Company Limited, BR No. 0101601092',
+    hotline: 'Hotline',
+    contactUs: 'Contact us',
   },
 };

@@ -87,10 +87,105 @@ export default {
     description2:
       'Với đội ngũ kỹ sư dày dạn kinh nghiệm, thành thạo nhiều ngôn ngữ lập trình và am hiểu sâu sắc nghiệp vụ, chúng tôi giúp khách hàng tối ưu quy trình và tạo ra giá trị bền vững qua công nghệ.',
   },
+  contact: {
+    description:
+      'Kết nối với chúng tôi để hiện thực hóa giải pháp phần mềm cho doanh nghiệp của bạn.',
+    header1: 'Get in',
+    header2: 'Touch with Us',
+    title: 'Vui lòng điền vào biểu mẫu bên dưới và cho chúng tôi biết ý kiến của bạn!',
+    afterSubmitTitle: 'Sau khi bạn gửi biểu mẫu',
+    afterSubmitItems: [
+      'Bạn sẽ nhận được email xác nhận đã gửi biểu mẫu. Đại diện của chúng tôi sẽ liên hệ với bạn trong vòng 24–72 giờ, tùy theo mức độ phức tạp của yêu cầu.',
+      'Chúng tôi sẽ sắp xếp một cuộc gọi hoặc buổi họp để trao đổi chi tiết về nhu cầu kinh doanh của bạn.',
+    ],
+    firstName: {
+      label: 'Tên*',
+      placeholder: 'Nhập tên của bạn',
+    },
+    lastName: {
+      label: 'Họ*',
+      placeholder: 'Nhập họ của bạn',
+    },
+    email: {
+      label: 'Email*',
+      placeholder: 'Địa chỉ email công ty',
+      error: 'Vui lòng nhập email hợp lệ',
+    },
+    country: {
+      label: 'Quốc gia',
+    },
+    company: {
+      label: 'Tên công ty*',
+      placeholder: 'Nhập tên công ty',
+    },
+    jobTitle: {
+      label: 'Chức danh*',
+      placeholder: 'Chức danh của bạn',
+    },
+    phone: {
+      label: 'Số điện thoại',
+      placeholder: 'Số điện thoại liên hệ',
+    },
+    businessNeeds: {
+      label: 'Nhu cầu doanh nghiệp*',
+      placeholder: 'Hãy cho chúng tôi biết thêm về nhu cầu của bạn',
+    },
+    actions: {
+      reset: 'Đặt lại',
+      submit: 'Liên hệ',
+    },
+  },
   common: {
     readMore: 'Xem thêm',
+    contact: 'Liên hệ',
+  },
+  company: {
+    name: 'Tên công ty',
+    nameValue: 'Công ty TNHH BIT DN Japan Holdings',
+
+    ceo: 'Người đại diện',
+    ceoValue: 'Đỗ Văn Khắc',
+
+    shareholder: 'Cổ đông',
+    shareholderValue: 'BITDN Software sở hữu 100%',
+
+    capital: 'Vốn điều lệ',
+    capitalValue: '2.3 tỷ Yên (tăng vốn ngày 13/06/2025)',
+
+    founded: 'Thành lập',
+    foundedValue: 'Tháng 11 năm 2005',
+
+    employees: 'Nhân sự',
+    employeesValue: '5.000 người (hợp nhất)',
+    employeesNote: '*Bao gồm đối tác',
+
+    profileDownload: 'Tải hồ sơ công ty',
+    profileDate: '(Tháng 01/2026)',
+
+    video: 'Video giới thiệu công ty',
+    videoDate: '(Tháng 05/2025)',
+    profile: 'Hồ sơ công ty',
+    title: 'BitDN Japan Holdings',
+    description:
+      'Chúng tôi hỗ trợ doanh nghiệp của khách hàng một cách toàn diện từ đầu đến cuối thông qua “Mô hình Bestshore”, kết hợp công nghệ tiên tiến, nguồn nhân lực đa dạng, cùng lợi thế của phát triển offshore và nearshore',
   },
   footer: {
-    bottom: 'Copyright © BIT DA NANG. All Rights Reserved.',
+    headquarter: 'Trụ sở chính',
+    registeredOffice: 'Văn phòng đăng ký',
+    phone: 'Điện thoại',
+    getDirection: 'Chỉ đường',
+    accompanyTitle: 'Đồng hành cùng bạn',
+    links: {
+      about: 'Về chúng tôi',
+      service: 'Dịch vụ',
+      contact: 'Liên hệ',
+      careers: 'Tuyển dụng',
+    },
+    companyName: 'Công ty TNHH Phần mềm BitDN',
+    registeredOfficeFull: '37 Thanh Vinh 10, Hoà Khánh Bắc, Liên Chiểu, Đà Nẵng, Việt Nam',
+    contentManagement:
+      'Chịu trách nhiệm quản lý nội dung: Công ty TNHH Phần mềm BitDN, BR No. 0101601092',
+    hotline: 'Hotline',
+    contactUs: 'Liên hệ',
   },
 };
