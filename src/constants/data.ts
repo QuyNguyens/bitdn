@@ -1,4 +1,5 @@
 import { JobDetail } from '@/types/jobCard';
+import { SuggestItem } from '@/types/suggest';
 
 export type SelectOption = {
   key: string;
@@ -166,5 +167,40 @@ export const JOBS: JobDetail[] = [
         'Ability to learn new technologies quickly',
       ],
     },
+  },
+];
+
+export const YOU_MIGHT_LIKE_DATA: SuggestItem[] = [
+  {
+    id: '1',
+    title: 'Top AI Trends in 2026: How Ready Are You?',
+    description:
+      '2025 marked a pivotal year for AI accelerated adoption across a wide range of industries. Looking ahead in 2026, understanding the emerging trends that will define the next phase of AI’s evolution is essential for businesses who want to stay competitive.',
+    image: '/images/ai-trends-2026.png',
+    href: '/#',
+  },
+  {
+    id: '2',
+    title: 'Generative AI in Business: Practical Use Cases',
+    description:
+      'From customer support automation to content generation and internal knowledge assistants, generative AI is transforming how modern businesses operate. Discover real-world use cases you can apply today.',
+    image: '/images/generative-ai-business.png',
+    href: '/#',
+  },
+  {
+    id: '3',
+    title: 'How AI Is Reshaping Software Development',
+    description:
+      'AI-powered coding assistants, automated testing, and intelligent code reviews are redefining the software development lifecycle. Learn how development teams can adapt and thrive in this new era.',
+    image: '/images/ai-software-development.png',
+    href: '/#',
+  },
+  {
+    id: '4',
+    title: 'AI & Data Privacy: What Companies Must Know',
+    description:
+      'As AI adoption grows, data privacy and regulatory compliance become critical challenges. This article explores best practices for building AI systems that respect user data and comply with global regulations.',
+    image: '/images/dell-AI-Factory.png',
+    href: '/#',
   },
 ];

@@ -23,7 +23,7 @@ export default function HeaderBottom() {
   const { t } = useI18n();
 
   return (
-    <Navbar className="bg-white shadow-2xl" onMenuOpenChange={setIsMenuOpen}>
+    <Navbar className="bg-white shadow-2xl px-2" onMenuOpenChange={setIsMenuOpen}>
       <NavbarContent>
         <NavbarMenuToggle
           aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}

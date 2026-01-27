@@ -98,6 +98,10 @@ export default {
       'Bạn sẽ nhận được email xác nhận đã gửi biểu mẫu. Đại diện của chúng tôi sẽ liên hệ với bạn trong vòng 24–72 giờ, tùy theo mức độ phức tạp của yêu cầu.',
       'Chúng tôi sẽ sắp xếp một cuộc gọi hoặc buổi họp để trao đổi chi tiết về nhu cầu kinh doanh của bạn.',
     ],
+    fullName: {
+      label: 'Họ và tên*',
+      placeholder: 'Nhập họ và tên của bạn',
+    },
     firstName: {
       label: 'Tên*',
       placeholder: 'Nhập tên của bạn',
@@ -152,7 +156,7 @@ export default {
     employees: 'Nhân sự',
     employeesValue: '45 người',
     employeesNote: '*Bao gồm đối tác',
-    
+
     profile: 'Hồ sơ công ty',
     title: 'Bit Da Nang',
     description:
@@ -170,7 +174,7 @@ export default {
       contact: 'Liên hệ',
       careers: 'Tuyển dụng',
     },
-    companyName: 'Công ty TNHH Phần mềm Bit Da Nang',
+    companyName: 'Công ty TNHH Bit Da Nang',
     registeredOfficeFull: '37 Thanh Vinh 10, Hoà Khánh Bắc, Liên Chiểu, Đà Nẵng, Việt Nam',
     contactUs: 'Liên hệ',
   },

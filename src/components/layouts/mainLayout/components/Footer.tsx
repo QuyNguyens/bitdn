@@ -26,7 +26,7 @@ const Footer = () => {
                 title={t('footer.phone')}
                 description="(+84) 934 845 393"
               />
-              <Button
+              {/* <Button
                 className="bg-black/90 text-white w-fit border border-gray-300"
                 radius="full"
                 endContent={<MoveRight />}
@@ -38,7 +38,7 @@ const Footer = () => {
                 }
               >
                 {t('footer.getDirection')}
-              </Button>
+              </Button> */}
             </div>
             <div></div>
           </div>
@@ -54,7 +54,7 @@ const Footer = () => {
               <Link href="/contact" className="text-sm hover:underline text-gray-200">
                 {t('footer.links.contact')}
               </Link>
-              <Link href="/carer" className="text-sm hover:underline text-gray-200">
+              <Link href="/career" className="text-sm hover:underline text-gray-200">
                 {t('footer.links.careers')}
               </Link>
             </div>

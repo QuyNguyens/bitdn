@@ -8,3 +8,15 @@ export type ContactFormPayload = {
   phone?: string;
   businessNeeds: string;
 };
+
+export type ApplicationFormPayload = {
+  fullName: string;
+  email: string;
+  phone: string;
+  cv?: File;
+  coverLetter?: File;
+  cvBase64?: string; // file upload
+  cvName?: string;
+  coverLetterBase64?: string;
+  coverLetterName?: string;
+};

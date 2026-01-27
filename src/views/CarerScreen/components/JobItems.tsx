@@ -34,9 +34,9 @@ const JobItems = ({ filter }: Props) => {
       return keywordMatch && positionMatch && locationMatch && levelMatch;
     });
   }, [filter]);
-  console.log('filter: ', filter);
+
   return (
-    <div className="w-full lg:w-4/5 mx-auto">
+    <div className="w-full lg:w-4/5 mx-auto px-2">
       <h1 className="text-4xl font-medium">Vị trí đang tuyển dụng</h1>
       <p className="mt-6">Hành trình đáng nhớ bắt đầu từ những cơ hội tuyệt vời!</p>
 

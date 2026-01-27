@@ -38,7 +38,6 @@ const Banner = ({ filter, setFilter, handleSubmit }: BannerProps) => {
           locations={VIETNAM_LOCATIONS}
           levels={JOB_LEVELS}
         />
-        ;
       </div>
     </div>
   );

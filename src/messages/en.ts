@@ -97,6 +97,10 @@ export default {
       'You will receive a confirmation email for your submission. Our representative will contact you within 24–72 hours, depending on the complexity of your request.',
       'We will schedule a call or meeting to discuss your business needs.',
     ],
+    fullName: {
+      label: 'Full name*',
+      placeholder: 'Full name',
+    },
     firstName: {
       label: 'First Name*',
       placeholder: 'First name',
@@ -175,7 +179,7 @@ export default {
       contact: 'Contact',
       careers: 'Careers',
     },
-    companyName: 'Bit Da Nang Software Company Limited',
+    companyName: 'Bit Da Nang Company Limited',
     registeredOfficeFull:
       '37 Thanh Vinh 10, Hoa Khanh Bac Ward, Lien Chieu District, Da Nang, Vietnam',
     contactUs: 'Contact us',
