@@ -54,6 +54,7 @@ const AboutUs = () => {
                 image={item.image}
                 title={t(`features.${item.key}.title`)}
                 description={t(`features.${item.key}.description`)}
+                href={`/about-us/${item.key}`}
               />
             </motion.div>
           ))}

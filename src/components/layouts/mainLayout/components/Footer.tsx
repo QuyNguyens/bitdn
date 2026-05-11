@@ -10,12 +10,17 @@ const Footer = () => {
   const router = useRouter();
 
   return (
-    <div className="flex justify-center mt-14 bg-black/90 pt-16">
-      <div className="w-full lg:w-4/5">
-        <div className="flex flex-col lg:flex-row justify-center gap-10 px-3">
+    <div className="relative flex justify-center mt-14 bg-gradient-to-b from-[#0a0f1a] to-black pt-20 pb-10 border-t border-white/10 overflow-hidden">
+      {/* Background Glow */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[300px] bg-blue-600/10 blur-[120px] rounded-full pointer-events-none" />
+
+      <div className="relative z-10 w-full lg:w-4/5">
+        <div className="flex flex-col lg:flex-row justify-center gap-16 px-6">
           <div className="flex flex-1 justify-between text-white">
-            <div className="flex flex-col gap-10">
-              <h1 className="text-4xl font-bold">{t('footer.headquarter')}</h1>
+            <div className="flex flex-col gap-8">
+              <h1 className="text-3xl font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400">
+                {t('footer.headquarter')}
+              </h1>
               <UserItem
                 icon={Building}
                 title={t('footer.registeredOffice')}
@@ -26,59 +31,48 @@ const Footer = () => {
                 title={t('footer.phone')}
                 description="(+84) 934 845 393"
               />
-              {/* <Button
-                className="bg-black/90 text-white w-fit border border-gray-300"
-                radius="full"
-                endContent={<MoveRight />}
-                onClick={() =>
-                  window.open(
-                    'https://www.google.com/maps/place/37+Thanh+Vinh+10,+Ho%C3%A0+Kh%C3%A1nh+B%E1%BA%AFc,+Li%C3%AAn+Chi%E1%BB%83u,+%C4%90%C3%A0+N%E1%BA%B5ng,+Vi%E1%BB%87t+Nam',
-                    '_blank',
-                  )
-                }
-              >
-                {t('footer.getDirection')}
-              </Button> */}
             </div>
-            <div></div>
           </div>
-          <div className="flex flex-1 flex-col gap-4 text-white">
-            <h1 className="text-4xl font-bold">{t('footer.accompanyTitle')}</h1>
-            <div className="w-4/5 md:w-3/5 grid grid-cols-2 gap-6">
-              <Link href="/about-us" className="text-sm hover:underline text-gray-200">
+          <div className="flex flex-1 flex-col gap-6 text-white">
+            <h1 className="text-3xl font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400">
+              {t('footer.accompanyTitle')}
+            </h1>
+            <div className="w-full md:w-3/5 grid grid-cols-2 gap-4">
+              <Link href="/about-us" className="text-sm text-gray-400 hover:text-[#4ea5ff] transition-colors duration-300">
                 {t('footer.links.about')}
               </Link>
-              <Link href="/service" className="text-sm hover:underline text-gray-200">
+              <Link href="/service" className="text-sm text-gray-400 hover:text-[#4ea5ff] transition-colors duration-300">
                 {t('footer.links.service')}
               </Link>
-              <Link href="/contact" className="text-sm hover:underline text-gray-200">
+              <Link href="/contact" className="text-sm text-gray-400 hover:text-[#4ea5ff] transition-colors duration-300">
                 {t('footer.links.contact')}
               </Link>
-              <Link href="/career" className="text-sm hover:underline text-gray-200">
+              <Link href="/career" className="text-sm text-gray-400 hover:text-[#4ea5ff] transition-colors duration-300">
                 {t('footer.links.careers')}
               </Link>
             </div>
-            <div className="flex flex-col gap-2 mt-3">
-              <h2> {t('footer.companyName')}</h2>
-              <p className="text-xs text-gray-300">
-                <span>{t('footer.registeredOffice')}: </span>
+            <div className="flex flex-col gap-3 mt-4">
+              <h2 className="text-lg font-medium">{t('footer.companyName')}</h2>
+              <p className="text-sm text-gray-400 leading-relaxed">
+                <span className="text-gray-300">{t('footer.registeredOffice')}: </span>
                 {t('footer.registeredOfficeFull')}
               </p>
               <Button
                 onClick={() => {
                   router.push('/contact');
                 }}
-                className="w-fit rounded-full mt-4"
-                color="primary"
-                startContent={<MailIcon />}
+                className="w-fit rounded-full mt-4 bg-white/10 hover:bg-[#1761b6] text-white border border-white/20 hover:border-transparent transition-all duration-300 px-6 py-5"
+                startContent={<MailIcon size={18} />}
               >
                 {t('footer.contactUs')}
               </Button>
             </div>
           </div>
         </div>
-        <div className="mt-10 flex justify-center border-t border-gray-300 py-2">
-          <span className="text-sm text-gray-300">Copyright @ 2026 BIT DA NANG.</span>
+        <div className="mt-16 flex justify-center border-t border-white/10 pt-8">
+          <span className="text-sm text-gray-500 font-light tracking-wide">
+            &copy; 2026 BIT DA NANG. All rights reserved.
+          </span>
         </div>
       </div>
     </div>

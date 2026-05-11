@@ -3,58 +3,79 @@
 import { useI18n } from '@/i18n/I18nProvider';
 import Image from 'next/image';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 
 const CompanyInfoCard = () => {
   const { t } = useI18n();
 
   return (
-    <div className="w-full lg:w-4/5 px-2">
-      <div className="mb-10 w-full flex justify-center">
-        <span className="text-3xl bg-linear-to-r from-green-500 via-lime-500 to-orange-500 bg-clip-text text-transparent">
+    <section className="w-full lg:w-4/5 mx-auto px-4 md:px-6 py-6">
+      {/* Section title */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+        className="mb-8 md:mb-12 w-full flex justify-center"
+      >
+        <h2 className="text-2xl md:text-3xl font-bold text-gradient">
           {t('company.profile')}
-        </span>
-      </div>
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
+        </h2>
+      </motion.div>
+
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
         {/* Left image */}
-        <div className="relative rounded-2xl overflow-hidden">
+        <motion.div
+          initial={{ opacity: 0, x: -30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+          className="relative rounded-2xl overflow-hidden min-h-[300px] md:min-h-[400px] shadow-lg group"
+        >
           <Image
-            src="/images/companyInfo.png" // đổi path theo project
-            alt="Bit Da Nang"
+            src="/images/companyInfo.png"
+            alt="Bit Da Nang Office"
             fill
-            className="object-cover"
+            className="object-cover transition-transform duration-700 group-hover:scale-105"
             priority
           />
-        </div>
+        </motion.div>
 
         {/* Right content */}
-        <div className="rounded-2xl border border-gray-200 bg-white p-6 md:p-8">
-          <ul className="space-y-4 text-sm md:text-base text-gray-800">
-            <li>
-              <span className="font-semibold">{t('company.name')}：</span>
-              {t('company.nameValue')}
-              <br />
+        <motion.div
+          initial={{ opacity: 0, x: 30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7, delay: 0.1 }}
+          className="rounded-2xl border border-gray-200 bg-white p-6 md:p-8 shadow-md flex items-center"
+        >
+          <ul className="space-y-5 text-sm md:text-base text-gray-800 w-full">
+            <li className="flex flex-col sm:flex-row sm:items-start gap-1">
+              <span className="font-bold text-gray-900 shrink-0 min-w-[140px]">{t('company.name')}：</span>
+              <span>{t('company.nameValue')}</span>
             </li>
 
-            <li>
-              <span className="font-semibold">{t('company.ceo')}：</span>
-              {t('company.ceoValue')}
+            <li className="flex flex-col sm:flex-row sm:items-start gap-1">
+              <span className="font-bold text-gray-900 shrink-0 min-w-[140px]">{t('company.ceo')}：</span>
+              <span>{t('company.ceoValue')}</span>
             </li>
 
-            <li>
-              <span className="font-semibold">{t('company.founded')}：</span>
-              {t('company.foundedValue')}
+            <li className="flex flex-col sm:flex-row sm:items-start gap-1">
+              <span className="font-bold text-gray-900 shrink-0 min-w-[140px]">{t('company.founded')}：</span>
+              <span>{t('company.foundedValue')}</span>
             </li>
 
-            <li>
-              <span className="font-semibold">{t('company.employees')}：</span>
-              {t('company.employeesValue')}
-              <span className="text-gray-500"> {t('company.employeesNote')}</span>
+            <li className="flex flex-col sm:flex-row sm:items-start gap-1">
+              <span className="font-bold text-gray-900 shrink-0 min-w-[140px]">{t('company.employees')}：</span>
+              <span>
+                {t('company.employeesValue')}
+                <span className="text-gray-500 ml-1">{t('company.employeesNote')}</span>
+              </span>
             </li>
-
           </ul>
-        </div>
+        </motion.div>
       </div>
-    </div>
+    </section>
   );
 };
 

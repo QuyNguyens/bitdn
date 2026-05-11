@@ -5,6 +5,8 @@ import { JOBS } from '@/constants/data';
 import JobCard from './JobCard';
 import { useRouter } from 'next/navigation';
 import { JobFilterValues } from '..';
+import { useI18n } from '@/i18n/I18nProvider';
+import { motion } from 'framer-motion';
 
 type Props = {
   filter: JobFilterValues;
@@ -12,6 +14,7 @@ type Props = {
 
 const JobItems = ({ filter }: Props) => {
   const router = useRouter();
+  const { t } = useI18n();
 
   const generateJobSlug = (title: string, id: string) => {
     return title.toLowerCase().replaceAll(' ', '-') + '-' + id;
@@ -36,13 +39,26 @@ const JobItems = ({ filter }: Props) => {
   }, [filter]);
 
   return (
-    <div className="w-full lg:w-4/5 mx-auto px-2">
-      <h1 className="text-4xl font-medium">Vị trí đang tuyển dụng</h1>
-      <p className="mt-6">Hành trình đáng nhớ bắt đầu từ những cơ hội tuyệt vời!</p>
+    <section className="w-full lg:w-4/5 mx-auto px-4 md:px-6 pb-12">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+      >
+        <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight">
+          {t('career.jobItems.openPositions')}
+        </h1>
+        <p className="mt-4 text-base md:text-lg text-gray-600 leading-relaxed">
+          {t('career.jobItems.slogan')}
+        </p>
+      </motion.div>
 
-      <div className="mt-6 flex flex-col gap-4">
+      <div className="mt-8 flex flex-col gap-4">
         {filteredJobs.length === 0 && (
-          <p className="text-gray-500">Không tìm thấy vị trí phù hợp.</p>
+          <div className="text-center py-16">
+            <p className="text-gray-400 text-lg">{t('career.jobItems.noJobsFound')}</p>
+          </div>
         )}
 
         {filteredJobs.map((job) => (
@@ -60,7 +76,7 @@ const JobItems = ({ filter }: Props) => {
           />
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 

@@ -92,21 +92,22 @@ export default {
     header1: '私たちと',
     header2: 'ご連絡ください',
     title: '以下のフォームにご記入のうえ、ご意見をお聞かせください。',
+    requiredError: 'このフィールドを入力してください。',
     afterSubmitTitle: 'フォーム送信後の流れ',
     afterSubmitItems: [
       '送信内容の確認メールをお送りします。ご依頼内容の複雑さに応じて、24〜72時間以内に担当者よりご連絡いたします。',
       'ビジネスニーズについて詳しくお伺いするため、お打ち合わせまたはお電話の日時を調整いたします。',
     ],
     fullName: {
-      label: '氏名*',
+      label: '氏名',
       placeholder: '氏名',
     },
     firstName: {
-      label: '名*',
+      label: '名',
       placeholder: 'お名前（名）',
     },
     lastName: {
-      label: '姓*',
+      label: '姓',
       placeholder: 'お名前（姓）',
     },
     email: {
@@ -118,11 +119,11 @@ export default {
       label: '国',
     },
     company: {
-      label: '会社名*',
+      label: '会社名',
       placeholder: '会社名を入力してください',
     },
     jobTitle: {
-      label: '役職*',
+      label: '役職',
       placeholder: 'あなたの役職',
     },
     phone: {
@@ -130,7 +131,7 @@ export default {
       placeholder: '連絡先電話番号',
     },
     businessNeeds: {
-      label: 'ご相談内容*',
+      label: 'ご相談内容',
       placeholder: 'ビジネスのご要望についてご記入ください',
     },
     actions: {
@@ -184,4 +185,150 @@ export default {
       '37 Thanh Vinh 10, Hoa Khanh Bac Ward, Lien Chieu District, Da Nang, Vietnam',
     contactUs: 'お問い合わせ',
   },
+  career: {
+    jobCard: {
+      viewMore: '詳細を見る',
+      postedOn: '投稿日',
+    },
+    jobItems: {
+      openPositions: '募集中の職種',
+      slogan: '素晴らしい機会から思い出に残る旅が始まります！',
+      noJobsFound: '該当する職種が見つかりません。',
+    },
+    jobSearchFilter: {
+      keyword: 'キーワード',
+      jobPosition: '職種',
+      position: 'ポジション',
+      selectPosition: 'ポジションを選択',
+      location: '勤務地',
+      selectLocation: '勤務地を選択',
+      level: 'レベル',
+      selectLevel: 'レベルを選択',
+      search: '検索',
+    },
+  },
+  jobDetail: {
+    banner: {
+      jobs: '採用情報',
+    },
+    tabs: {
+      jobDetails: '仕事内容',
+      application: '応募する',
+    },
+    applicationForm: {
+      cvTitle: '履歴書・職務経歴書',
+      cvDesc: '履歴書または職務経歴書をアップロードしてください',
+      cvUpload: 'ここに履歴書をアップロード',
+      acceptedFiles: '対応形式：PDF、DOC、DOCX、JPEG、PNG（最大20MBまで）',
+      appInfoTitle: '応募情報',
+      appInfoDesc: '以下の情報を入力してください',
+      coverLetterTitle: 'カバーレター',
+      coverLetterDesc: 'カバーレターをアップロードしてください',
+      coverLetterUpload: 'ここにカバーレターをアップロード',
+      submitBtn: '応募を送信',
+    },
+    description: {
+      title: '仕事内容',
+      jobTitle: '職種：',
+      location: '勤務地：',
+      jobType: '雇用形態：',
+      company: '会社概要：',
+      companyDesc: 'Bit Da Nangでは、人がすべての中心です。2024年3月に設立された当社は、45名の情熱的なエンジニアからなるチームを擁する成長中のソフトウェアアウトソーシング企業であり、グローバルパートナーに高品質なデジタルソリューションを提供することに専念しています。コラボレーション、卓越した技術、アジャイルな思考を通じて、企業がアイデアを信頼性が高くスケーラブルなソフトウェアに転換できるよう支援するとともに、チームのためにポジティブで目的志向の職場環境を構築しています。',
+      candidate: '求める人物像：',
+      candidateDesc: 'システム制御ソフトウェア、データモデリング、シミュレーションテストの実施、ソフトウェア統合の技術的専門知識を持つ、熟練したソフトウェア開発者を探しています。オブジェクト指向分析設計（OOAD）、機器制御ソフトウェア開発、仮想テスト環境の経験があればなお可。理想的な候補者は、半導体、医療機器、電気通信、または航空宇宙の分野での経験がある方です。',
+      responsibilities: '主な業務内容：',
+      resp1: '部門横断的なチームメンバーと協力して要件を収集する。',
+      resp2: '顧客のプロセスを理解し、対応するニーズを分析する。',
+      resp3: '機能のソフトウェア単体テストの設計、開発、実施。',
+      resp4: 'CI/CDアプローチを採用し、製品に動的な調整を加える。',
+      resp5: '開発サイクルの早い段階でコーディングエラーのトラブルシューティングとデバッグを行う。',
+      resp6: 'ピアコードレビューに参加し、ソフトウェア開発プロセスの改善に積極的に貢献する。',
+      resp7: '複雑で反復的なエンジニアリングタスクを自動化する。',
+      resp8: '開発のすべての段階でソフトウェアの技術文書を維持する。',
+      requirementTitle: '応募要件',
+      reqEducation: '学歴：コンピュータサイエンス／コンピュータアプリケーション／ソフトウェアエンジニアリングの学士号または修士号。',
+      reqExperience: '経験：関連分野で最低3年以上の経験。',
+      reqTechSkills: '技術スキル：必須 - C++、Python、データ分析、モデリング、Git、Bitbucketの熟練度。',
+      reqGoodToHave: '歓迎 - Simulink、Linux、BASH（Unix Shell）の経験',
+      reqSoftSkills: 'ソフトスキル：優れたコミュニケーション能力、高い問題解決能力、熱意のあるチームプレーヤー。',
+      reqAgile: 'アジャイルな考え方を持ち、新しいテクノロジーを迅速に学習できる能力。',
+    }
+  },
+  homeExtra: {
+    stats: {
+      engineers: '優秀なエンジニア',
+      partners: 'グローバルパートナー',
+      agile: 'アジャイルプロセス',
+      quality: '品質保証',
+      experience: '年の経験',
+    },
+    techStack: {
+      title: '使用技術',
+      subtitle: '私たちは、ビジネスに最適なソリューションを構築するために、最新のテクノロジーを使用しています。',
+    }
+  },
+  careerExtra: {
+    benefits: {
+      title: 'ここで働くのが好きな理由',
+      subtitle: 'すべてのメンバーが潜在能力を最大限に発揮できる環境を構築します。',
+      items: {
+        insurance: { title: '保険と健康', desc: '完全な保険適用と毎年の定期健康診断。' },
+        environment: { title: 'モダンな環境', desc: 'クリエイティブなワークスペース、無料の紅茶とコーヒー、充実したパントリー。' },
+        income: { title: '競争力のある収入', desc: '魅力的な給与とボーナス、実績に基づく年1〜2回の給与改定。' },
+        growth: { title: 'キャリアパス', desc: '体系的なトレーニング、学習費用と資格取得のサポート。' },
+        culture: { title: '若々しい文化', desc: '毎月のチームビルディング、社員旅行、社内アクティビティ。' },
+        time: { title: 'フレキシブルな時間', desc: '月曜日から金曜日までの勤務、ワークライフバランスの尊重。' },
+      }
+    },
+    process: {
+      title: '採用プロセス',
+      subtitle: '明確で迅速なプロセスにより、簡単に統合できます。',
+      items: {
+        apply: { title: '1. 応募', desc: '応募フォームまたはメールで履歴書を提出してください。' },
+        interview: { title: '2. 面接', desc: '経験と開発の方向性について話し合います。' },
+        probation: { title: '3. 試用期間', desc: 'チームと一緒に実際のプロジェクトに参加します。' },
+        official: { title: '4. 正社員', desc: 'Bit Da Nangの正式なメンバーになります。' },
+      }
+    }
+  },
+  aboutExtra: {
+    coreValues: {
+      title: '使命と価値',
+      subtitle: 'Bit Da Nangにおける開発の方向性と不変の原則。',
+      items: {
+        mission: { title: '使命', desc: 'ビジネスの運用効率を向上させ、突破口を開くための最適なテクノロジーソリューションを提供します。' },
+        vision: { title: 'ビジョン', desc: '地域をリードするテクノロジー企業となり、海外のクライアントから信頼される企業になります。' },
+        values: { title: 'コアバリュー', desc: '献身 - 革新 - 品質。常に顧客の利益を第一に考えます。' },
+      }
+    },
+    team: {
+      title: 'コアチームメンバー',
+      subtitle: 'プロジェクトを成功に導く情熱的な人々。',
+    }
+  },
+  serviceExtra: {
+    process: {
+      title: 'プロフェッショナルなワークプロセス',
+      subtitle: 'プロジェクトが予定通りに高品質で完了するように、国際標準のプロセスを適用します。',
+      items: {
+        consult: { title: '1. 相談', desc: 'ニーズに耳を傾け、問題を分析し、最適なソリューションを提案します。' },
+        design: { title: '2. UI/UXデザイン', desc: 'モダンなインターフェースを作成し、すべてのデバイスでユーザーエクスペリエンスを最適化します。' },
+        develop: { title: '3. 開発とテスト', desc: '高水準でプログラムし、厳格なテストを行って安定性を確保します。' },
+        deliver: { title: '4. 納品とサポート', desc: 'システムを導入し、運用をトレーニングし、長期的なサポートを提供します。' },
+      }
+    },
+    intro: 'お客様のビジネスがデジタルに変革し、新しい時代を切り拓くための包括的なテクノロジーソリューションを提供します。',
+    features: {
+      software: ['カスタムERP / CRMシステム', 'API開発とシステム統合', 'データベースのセキュリティと最適化', 'スケーラブルなクラウドアーキテクチャ'],
+      website: ['レスポンシブデザイン（モバイルファースト）', 'SEOとページ速度の最適化', 'プロフェッショナルなEコマースシステム', 'モダンで独占的なUI/UX'],
+      mobile: ['iOSおよびAndroidアプリ（クロスプラットフォーム）', 'React Native / Flutter開発', '通知とクラウドメッセージングの統合', 'App Store公開サポート']
+    }
+  },
+  contactExtra: {
+    address: '住所',
+    phone: '電話',
+    email: 'メール',
+    hours: '営業時間',
+    hoursValue: '月曜日 - 金曜日: 9:00 - 18:00',
+  }
 };

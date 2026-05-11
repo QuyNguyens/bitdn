@@ -2,7 +2,9 @@
 
 import { JobCardProps } from '@/types/jobCard';
 import { Button, Chip } from '@heroui/react';
-import { Briefcase, Users, MapPin, Building2 } from 'lucide-react';
+import { Briefcase, Users, MapPin, Building2, ArrowRight } from 'lucide-react';
+import { useI18n } from '@/i18n/I18nProvider';
+import { motion } from 'framer-motion';
 
 const JobCard = ({
   title,
@@ -15,22 +17,29 @@ const JobCard = ({
   postedDate,
   onViewMore,
 }: JobCardProps) => {
+  const { t } = useI18n();
+
   return (
-    <div
-      className="w-full bg-white rounded-xl p-6 flex flex-col gap-4
-  shadow-[0_0_16px_rgba(0,0,0,0.08)]
-  ring-1 ring-black/5"
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5 }}
+      className="w-full bg-white rounded-2xl p-5 md:p-6 flex flex-col gap-4
+        border border-gray-200 shadow-md
+        transition-all duration-300
+        hover:shadow-lg hover:border-[#1761b6]/30 hover:-translate-y-1"
     >
       {/* Header */}
-      <div className="flex justify-between items-start">
-        <div>
-          <h3 className="text-xl font-semibold text-orange-600">{title}</h3>
+      <div className="flex flex-col sm:flex-row justify-between items-start gap-4">
+        <div className="flex-1">
+          <h3 className="text-lg md:text-xl font-bold text-[#1761b6]">{title}</h3>
 
-          <div className="flex gap-2 mt-2 flex-wrap">
+          <div className="flex gap-2 mt-3 flex-wrap">
             {level && (
               <Chip
-                variant="bordered"
-                className="text-sky-600 border-sky-600 rounded-2xl!"
+                variant="flat"
+                className="text-sky-700 bg-sky-50"
                 size="sm"
               >
                 {level}
@@ -39,8 +48,8 @@ const JobCard = ({
 
             {status && (
               <Chip
-                variant="bordered"
-                className="text-green-600 border-green-600 rounded-2xl!"
+                variant="flat"
+                className="text-green-700 bg-green-50"
                 size="sm"
               >
                 {status}
@@ -48,43 +57,44 @@ const JobCard = ({
             )}
           </div>
         </div>
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-row sm:flex-col items-center sm:items-end gap-3">
           <Button
-            color="warning"
+            color="primary"
             radius="full"
             size="sm"
-            className="text-white font-bold"
+            className="font-medium"
+            endContent={<ArrowRight size={14} />}
             onPress={onViewMore}
           >
-            View more
+            {t('career.jobCard.viewMore')}
           </Button>
-          <div className="text-right text-sm text-gray-500 italic">Posted on {postedDate}</div>
+          <div className="text-xs text-gray-400 italic">{t('career.jobCard.postedOn')} {postedDate}</div>
         </div>
       </div>
 
       {/* Body */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm text-gray-700">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm text-gray-600 pt-3 border-t border-gray-100">
         <div className="flex items-center gap-2">
-          <Briefcase size={16} />
+          <Briefcase size={15} className="text-gray-400" />
           <span>{employmentType}</span>
         </div>
 
         <div className="flex items-center gap-2">
-          <Building2 size={16} />
+          <Building2 size={15} className="text-gray-400" />
           <span>{workType}</span>
         </div>
 
         <div className="flex items-center gap-2">
-          <Users size={16} />
+          <Users size={15} className="text-gray-400" />
           <span>{category}</span>
         </div>
 
         <div className="flex items-center gap-2">
-          <MapPin size={16} />
+          <MapPin size={15} className="text-gray-400" />
           <span>{location}</span>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

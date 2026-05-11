@@ -15,21 +15,21 @@ const Banner = ({ filter, setFilter, handleSubmit }: BannerProps) => {
   const { t } = useI18n();
 
   return (
-    <div className="relative mt-2 h-[60vh] w-full md:mt-0">
+    <div className="relative mt-2 h-[50vh] md:h-[60vh] w-full overflow-hidden md:mt-0">
       {/* Background image */}
       <Image
         src="/images/career-banner.png"
-        alt="Banner"
+        alt="Career Banner"
         fill
         className="object-cover object-center"
         priority
       />
 
       {/* Overlay */}
-      <div className="absolute inset-0 bg-black/50" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/60" />
 
       {/* Content */}
-      <div className="w-full lg:w-4/5 mt-10 lg:mt-0 mx-auto absolute inset-0 z-10 flex flex-col items-center justify-center gap-4 px-4 text-white">
+      <div className="w-full lg:w-4/5 mt-10 lg:mt-0 mx-auto absolute inset-0 z-10 flex flex-col items-center justify-center gap-4 px-4 md:px-6 text-white">
         <JobSearchFilter
           value={filter}
           onChange={setFilter}

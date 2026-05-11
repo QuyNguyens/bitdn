@@ -10,12 +10,14 @@ const cardVariants = {
   hidden: {
     opacity: 0,
     y: 30,
+    scale: 0.95,
   },
   visible: {
     opacity: 1,
     y: 0,
+    scale: 1,
     transition: {
-      duration: 0.5,
+      duration: 0.6,
       ease: [0.16, 1, 0.3, 1],
     },
   },
@@ -28,40 +30,43 @@ const WhyChooseCard = ({ icon: Icon, title, desc }: Props) => {
       className="
         group
         rounded-2xl
-        bg-white/90
-        p-6
+        bg-white
+        border border-gray-200
+        p-8
         text-center
-        shadow-sm
-        transition
-        hover:-translate-y-1
-        hover:shadow-lg
+        shadow-md
+        transition-all
+        duration-300
+        hover:-translate-y-2
+        hover:shadow-xl
+        hover:border-[#1761b6]/30
       "
     >
       <div
         className="
           mx-auto
-          mb-4
+          mb-6
           flex
           h-14
           w-14
-          border
-          border-orange-700
           items-center
           justify-center
-          rounded-full
-          bg-orange-100
-          text-orange-600
-          transition
-          group-hover:bg-orange-500
+          rounded-xl
+          bg-[#1761b6]/10
+          text-[#1761b6]
+          transition-all
+          duration-300
+          group-hover:bg-[#1761b6]
           group-hover:text-white
+          group-hover:shadow-lg
         "
       >
         <Icon size={26} />
       </div>
 
-      <h3 className="mb-2 text-base font-semibold text-gray-900">{title}</h3>
+      <h3 className="mb-3 text-lg font-bold text-gray-900 tracking-tight">{title}</h3>
 
-      <p className="text-sm text-gray-600">{desc}</p>
+      <p className="text-sm text-gray-600 leading-relaxed">{desc}</p>
     </motion.div>
   );
 };

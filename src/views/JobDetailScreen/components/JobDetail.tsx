@@ -9,7 +9,7 @@ type JobDetailProps = {
 
 const JobDetail = ({ jobDetail }: JobDetailProps) => {
   return (
-    <div className="w-full md:w-4/5 lg:w-3/5 mx-auto flex flex-col gap-5">
+    <div className="w-full md:w-4/5 lg:w-3/5 mx-auto flex flex-col gap-6 px-4 md:px-0 pb-12">
       {jobDetail && (
         <JobDetailTitle
           title={jobDetail.title}

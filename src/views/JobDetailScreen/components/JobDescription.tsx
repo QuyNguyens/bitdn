@@ -1,114 +1,93 @@
 import { JobDetail } from '@/types/jobCard';
 import { CheckCircle2 } from 'lucide-react';
+import { useI18n } from '@/i18n/I18nProvider';
 
 type JobDescriptionProps = {
   jobDetail: JobDetail;
 };
 
 const JobDescription = ({ jobDetail }: JobDescriptionProps) => {
+  const { t } = useI18n();
   return (
     <div className="flex flex-col gap-5">
-      <h1 className="text-primary font-semibold text-2xl">Job Description</h1>
+      <h1 className="text-primary font-semibold text-2xl">{t('jobDetail.description.title')}</h1>
       <p>
-        <span className="font-semibold">Job Title: </span>
+        <span className="font-semibold">{t('jobDetail.description.jobTitle')} </span>
         {jobDetail.title}
       </p>
       <p>
-        <span className="font-semibold">Location: </span>
+        <span className="font-semibold">{t('jobDetail.description.location')} </span>
         {jobDetail.location}
       </p>
       <p>
-        <span className="font-semibold">Job Type: </span>
+        <span className="font-semibold">{t('jobDetail.description.jobType')} </span>
         {jobDetail.employmentType}
       </p>
       <p>
         {' '}
-        <span className="font-semibold">Company: </span>
+        <span className="font-semibold">{t('jobDetail.description.company')} </span>
       </p>
       <p className="leading-10">
-        At Bit Da Nang, our people are at the heart of everything we do. Founded in March 2024, we
-        are a growing software outsourcing company with a team of 45 passionate engineers, dedicated
-        to delivering high-quality digital solutions for global partners. Through collaboration,
-        technical excellence, and an agile mindset, we help businesses turn ideas into reliable,
-        scalable software while building a positive, purpose-driven workplace for our team.
+        {t('jobDetail.description.companyDesc')}
       </p>
       <p>
-        <span className="font-semibold">Candidate: </span>
+        <span className="font-semibold">{t('jobDetail.description.candidate')} </span>
       </p>
       <p className="leading-10">
-        We're looking for skilled software developers with technical expertise in systems control
-        software, data modelling, conducting simulations testing and software integrations. An
-        Experience with Object- Oriented Analysis and Design (OOAD), equipment control software
-        development and virtual testing environments would be an added advantage. The Ideal
-        candidate could come from Semiconductor, Medical equipment, Telecommunications or Aerospace
-        domains.
+        {t('jobDetail.description.candidateDesc')}
       </p>
       <p>
-        <span className="font-semibold">Key Responsibilities: </span>
+        <span className="font-semibold">{t('jobDetail.description.responsibilities')} </span>
       </p>
       <ul className="space-y-2 text-sm leading-relaxed text-gray-700">
         <li className="flex items-start gap-2">
           <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
-          <span>Collaborate with cross-functional team members to collect requirements.</span>
+          <span>{t('jobDetail.description.resp1')}</span>
         </li>
 
         <li className="flex items-start gap-2">
           <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
-          <span>Understand customer processes and analyse the corresponding needs.</span>
+          <span>{t('jobDetail.description.resp2')}</span>
         </li>
 
         <li className="flex items-start gap-2">
           <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
-          <span>Design, develop, and conduct software unit testing for functionality.</span>
+          <span>{t('jobDetail.description.resp3')}</span>
         </li>
 
         <li className="flex items-start gap-2">
           <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
-          <span>Employ a CI/CD approach to make dynamic adjustments to products.</span>
+          <span>{t('jobDetail.description.resp4')}</span>
         </li>
 
         <li className="flex items-start gap-2">
           <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
-          <span>Troubleshoot and debug coding errors early in the development cycle.</span>
+          <span>{t('jobDetail.description.resp5')}</span>
         </li>
 
         <li className="flex items-start gap-2">
           <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
-          <span>
-            Participate in peer code reviews and contribute actively to the improvement of the
-            software development process.
-          </span>
+          <span>{t('jobDetail.description.resp6')}</span>
         </li>
 
         <li className="flex items-start gap-2">
           <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
-          <span>Automate complex and repetitive engineering tasks.</span>
+          <span>{t('jobDetail.description.resp7')}</span>
         </li>
 
         <li className="flex items-start gap-2">
           <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
-          <span>
-            Maintain technical documentation for the software at all stages of development.
-          </span>
+          <span>{t('jobDetail.description.resp8')}</span>
         </li>
       </ul>
       <div className="flex flex-col gap-5 mt-20">
-        <h1 className="text-primary font-semibold text-2xl">Job Requirement</h1>
-        <span>
-          Education: B.E / B Tech/M tech in Computer Science/ Computer applications/Software
-          Engineering.
-        </span>
-        <span>Experience: Minimum 3+ years of experience in any of the relevant areas.</span>
-        <span>
-          Tech Skills: Must Haves - Proficiency in C++, Python, data analytics, Modelling, Git &
-          Bitbucket.
-        </span>
-        <span>Good to have - experience in Simulink, Linux, BASH (Unix Shell)</span>
-        <span>
-          Soft Skills: Excellent communication, Strong problem-solving skills, enthusiastic team
-          player,
-        </span>
-        <span>Agile mindset and ability to learn new technologies on the fly.</span>
+        <h1 className="text-primary font-semibold text-2xl">{t('jobDetail.description.requirementTitle')}</h1>
+        <span>{t('jobDetail.description.reqEducation')}</span>
+        <span>{t('jobDetail.description.reqExperience')}</span>
+        <span>{t('jobDetail.description.reqTechSkills')}</span>
+        <span>{t('jobDetail.description.reqGoodToHave')}</span>
+        <span>{t('jobDetail.description.reqSoftSkills')}</span>
+        <span>{t('jobDetail.description.reqAgile')}</span>
       </div>
     </div>
   );

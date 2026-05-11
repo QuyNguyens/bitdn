@@ -23,7 +23,11 @@ export default function HeaderBottom() {
   const { t } = useI18n();
 
   return (
-    <Navbar className="bg-white shadow-2xl px-2" onMenuOpenChange={setIsMenuOpen}>
+    <Navbar 
+      className="sticky top-0 z-50 bg-white/80 backdrop-blur-lg border-b border-gray-100/50 shadow-[0_4px_30px_rgba(0,0,0,0.03)] px-2" 
+      maxWidth="xl"
+      onMenuOpenChange={setIsMenuOpen}
+    >
       <NavbarContent>
         <NavbarMenuToggle
           aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}

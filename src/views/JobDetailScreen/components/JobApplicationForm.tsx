@@ -59,9 +59,9 @@ export default function JobApplicationForm() {
       {/* ===== Upload CV ===== */}
       <section className="w-full">
         <h3 className="text-xl font-semibold text-primary">
-          CV or resume <span className="text-primary">*</span>
+          {t('jobDetail.applicationForm.cvTitle')} <span className="text-primary">*</span>
         </h3>
-        <p className="mt-1 text-sm text-gray-500">Upload your CV or resume file</p>
+        <p className="mt-1 text-sm text-gray-500">{t('jobDetail.applicationForm.cvDesc')}</p>
 
         <label className="mt-4 flex cursor-pointer flex-col items-center justify-center rounded-md border-2 border-dashed border-gray-300 bg-white py-8 text-center transition hover:border-primary">
           {form.cv ? (
@@ -72,12 +72,12 @@ export default function JobApplicationForm() {
           ) : (
             <>
               <Upload className="h-8 w-8 text-primary" />
-              <p className="mt-2 font-medium">Upload your CV here</p>
+              <p className="mt-2 font-medium">{t('jobDetail.applicationForm.cvUpload')}</p>
             </>
           )}
 
           <p className="mt-1 text-xs text-gray-500">
-            Accepted files: PDF, DOC, DOCX, JPEG and PNG up to 20MB
+            {t('jobDetail.applicationForm.acceptedFiles')}
           </p>
 
           <input
@@ -91,8 +91,8 @@ export default function JobApplicationForm() {
 
       {/* ===== Application Information ===== */}
       <section className="w-full">
-        <h3 className="text-xl font-semibold text-primary">Application&apos;s information</h3>
-        <p className="mt-1 text-sm text-gray-500">Fill out the information below</p>
+        <h3 className="text-xl font-semibold text-primary">{t('jobDetail.applicationForm.appInfoTitle')}</h3>
+        <p className="mt-1 text-sm text-gray-500">{t('jobDetail.applicationForm.appInfoDesc')}</p>
 
         <div className="mt-5 flex flex-col gap-4">
           <Input
@@ -131,9 +131,9 @@ export default function JobApplicationForm() {
       {/* ===== Upload Cover Letter ===== */}
       <section className="w-full">
         <h3 className="text-xl font-semibold text-primary">
-          Cover letter <span className="text-primary">*</span>
+          {t('jobDetail.applicationForm.coverLetterTitle')} <span className="text-primary">*</span>
         </h3>
-        <p className="mt-1 text-sm text-gray-500">Upload your cover letter</p>
+        <p className="mt-1 text-sm text-gray-500">{t('jobDetail.applicationForm.coverLetterDesc')}</p>
 
         <label className="mt-4 flex cursor-pointer flex-col items-center justify-center rounded-md border-2 border-dashed border-gray-300 bg-white py-8 text-center transition hover:border-primary">
           {form.coverLetter ? (
@@ -144,12 +144,12 @@ export default function JobApplicationForm() {
           ) : (
             <>
               <Upload className="h-8 w-8 text-primary" />
-              <p className="mt-2 font-medium">Upload your Cover Letter here</p>
+              <p className="mt-2 font-medium">{t('jobDetail.applicationForm.coverLetterUpload')}</p>
             </>
           )}
 
           <p className="mt-1 text-xs text-gray-500">
-            Accepted files: PDF, DOC, DOCX, JPEG and PNG up to 20MB
+            {t('jobDetail.applicationForm.acceptedFiles')}
           </p>
 
           <input
@@ -164,7 +164,7 @@ export default function JobApplicationForm() {
       {/* ===== Submit Button (BOTTOM) ===== */}
       <div className="pt-6">
         <Button type="submit" className="w-full bg-primary text-white">
-          Submit Application
+          {t('jobDetail.applicationForm.submitBtn')}
         </Button>
       </div>
     </Form>

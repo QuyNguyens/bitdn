@@ -15,8 +15,25 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Bit Da Nang',
-  description: 'Công ty Bit Đà Nẵng',
+  title: 'Bit Da Nang | Giải pháp công nghệ hàng đầu',
+  description: 'Công ty Bit Đà Nẵng cung cấp các giải pháp phần mềm, phát triển ứng dụng di động và website chuyên nghiệp, uy tín hàng đầu tại Đà Nẵng.',
+  keywords: 'Bit Da Nang, công ty phần mềm Đà Nẵng, thiết kế website, ứng dụng di động, giải pháp công nghệ',
+  openGraph: {
+    title: 'Bit Da Nang | Giải pháp công nghệ hàng đầu',
+    description: 'Công ty Bit Đà Nẵng cung cấp các giải pháp phần mềm, phát triển ứng dụng di động và website chuyên nghiệp.',
+    url: 'https://bitdanang.com',
+    siteName: 'Bit Da Nang',
+    images: [
+      {
+        url: '/images/banner_home.png',
+        width: 1200,
+        height: 630,
+        alt: 'Bit Da Nang Banner',
+      },
+    ],
+    locale: 'vi_VN',
+    type: 'website',
+  },
 };
 
 export default function RootLayout({

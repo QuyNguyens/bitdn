@@ -3,6 +3,7 @@
 import { Input, Select, SelectItem, Button, Divider } from '@heroui/react';
 import { Search } from 'lucide-react';
 import { JobFilterValues } from '..';
+import { useI18n } from '@/i18n/I18nProvider';
 
 export type Option = {
   key: string;
@@ -33,16 +34,18 @@ const JobSearchFilter = ({
   onChange,
   onSubmit,
 }: JobFilterProps) => {
+  const { t } = useI18n();
+
   return (
     <div className="w-full bg-black/60 rounded-lg p-4 shadow-2xl">
       <div className="flex flex-col lg:flex-row gap-4 lg:gap-3 items-stretch lg:items-end">
         {/* Keyword */}
         <div className="min-w-60">
           <Input
-            label="Từ khoá"
+            label={t('career.jobSearchFilter.keyword')}
             labelPlacement="outside"
             startContent={<Search size={18} className="text-black" />}
-            placeholder="Vị trí công việc"
+            placeholder={t('career.jobSearchFilter.jobPosition')}
             value={value.keyword}
             classNames={{
               label: 'text-white! font-medium tracking-wide',
@@ -55,9 +58,9 @@ const JobSearchFilter = ({
 
         {/* Language */}
         <Select
-          label="Vị trí"
+          label={t('career.jobSearchFilter.position')}
           labelPlacement="outside"
-          placeholder="Chọn vị trí"
+          placeholder={t('career.jobSearchFilter.selectPosition')}
           classNames={customSelect}
           selectedKeys={value.position ? [value.position] : []}
           onSelectionChange={(keys) => onChange({ ...value, position: [...keys][0] as string })}
@@ -72,9 +75,9 @@ const JobSearchFilter = ({
 
         {/* Location */}
         <Select
-          label="Địa điểm"
+          label={t('career.jobSearchFilter.location')}
           labelPlacement="outside"
-          placeholder="Chọn địa điểm"
+          placeholder={t('career.jobSearchFilter.selectLocation')}
           classNames={customSelect}
           selectedKeys={value.location ? [value.location] : []}
           onSelectionChange={(keys) => onChange({ ...value, location: [...keys][0] as string })}
@@ -89,9 +92,9 @@ const JobSearchFilter = ({
 
         {/* Level */}
         <Select
-          label="Trình độ"
+          label={t('career.jobSearchFilter.level')}
           labelPlacement="outside"
-          placeholder="Chọn trình độ"
+          placeholder={t('career.jobSearchFilter.selectLevel')}
           classNames={customSelect}
           selectedKeys={value.level ? [value.level] : []}
           onSelectionChange={(keys) => onChange({ ...value, level: [...keys][0] as string })}
@@ -107,7 +110,7 @@ const JobSearchFilter = ({
         {/* Submit */}
         <div className="lg:self-end pt-6">
           <Button color="danger" className="px-8 w-full lg:w-auto" onPress={onSubmit}>
-            Tìm Kiếm
+            {t('career.jobSearchFilter.search')}
           </Button>
         </div>
       </div>
