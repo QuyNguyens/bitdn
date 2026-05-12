@@ -12,7 +12,7 @@ const Banner = () => {
     <div className="relative mt-2 h-[50vh] w-full overflow-hidden md:mt-0 lg:h-[65vh]">
       {/* Background image */}
       <Image
-        src="/images/service_banner.png"
+        src="/images/about-us.png"
         alt="About Us Banner"
         fill
         className="object-cover object-center"

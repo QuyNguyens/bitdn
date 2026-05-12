@@ -26,7 +26,7 @@ const TechStack = () => {
   return (
     <div className="w-full py-24 flex flex-col items-center gap-12 bg-white overflow-hidden">
       <div className="text-center">
-        <span className="text-sm font-bold text-[#1761b6] uppercase tracking-widest">Capabilities</span>
+        <span className="text-sm font-bold text-[#1761b6] uppercase tracking-widest">{t('homeExtra.techStack.badge')}</span>
         <h3 className="text-3xl md:text-4xl font-bold tracking-tight text-gray-900 mt-2">
           {t('homeExtra.techStack.title')}
         </h3>

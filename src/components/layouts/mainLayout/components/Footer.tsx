@@ -1,7 +1,9 @@
+'use client';
+
 import UserItem from '@/components/molicular/UserItem';
 import { useI18n } from '@/i18n/I18nProvider';
 import { Button } from '@heroui/react';
-import { Building, Mail, MailIcon, MoveRight, Phone, PhoneIcon } from 'lucide-react';
+import { Building, MailIcon, PhoneIcon, MapPin } from 'lucide-react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 
@@ -14,30 +16,47 @@ const Footer = () => {
       {/* Background Glow */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[300px] bg-blue-600/10 blur-[120px] rounded-full pointer-events-none" />
 
-      <div className="relative z-10 w-full lg:w-4/5">
-        <div className="flex flex-col lg:flex-row justify-center gap-16 px-6">
-          <div className="flex flex-1 justify-between text-white">
-            <div className="flex flex-col gap-8">
-              <h1 className="text-3xl font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400">
-                {t('footer.headquarter')}
-              </h1>
-              <UserItem
-                icon={Building}
-                title={t('footer.registeredOffice')}
-                description={t('footer.registeredOfficeFull')}
-              />
-              <UserItem
-                icon={PhoneIcon}
-                title={t('footer.phone')}
-                description="(+84) 934 845 393"
-              />
+      <div className="relative z-10 w-full lg:w-4/5 px-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 lg:gap-16">
+          {/* Vietnam Office */}
+          <div className="flex flex-col gap-6 text-white">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#1761b6] to-[#4ea5ff] flex items-center justify-center shrink-0">
+                <MapPin size={20} />
+              </div>
+              <h3 className="text-xl font-bold tracking-tight">{t('footer.headquarter')}</h3>
             </div>
+            <UserItem
+              icon={Building}
+              title={t('footer.registeredOffice')}
+              description={t('footer.registeredOfficeFull')}
+            />
+            <UserItem
+              icon={PhoneIcon}
+              title={t('footer.phone')}
+              description="(+84) 934 845 393"
+            />
           </div>
-          <div className="flex flex-1 flex-col gap-6 text-white">
-            <h1 className="text-3xl font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400">
-              {t('footer.accompanyTitle')}
-            </h1>
-            <div className="w-full md:w-3/5 grid grid-cols-2 gap-4">
+
+          {/* Japan Office */}
+          <div className="flex flex-col gap-6 text-white">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-red-500 to-red-400 flex items-center justify-center shrink-0">
+                <MapPin size={20} />
+              </div>
+              <h3 className="text-xl font-bold tracking-tight">{t('footer.japanOffice')}</h3>
+            </div>
+            <UserItem
+              icon={Building}
+              title={t('footer.japanCompanyName')}
+              description={t('footer.japanAddress')}
+            />
+          </div>
+
+          {/* Quick Links & Contact */}
+          <div className="flex flex-col gap-6 text-white">
+            <h3 className="text-xl font-bold tracking-tight">{t('footer.quickLinks')}</h3>
+            <div className="grid grid-cols-2 gap-3">
               <Link href="/about-us" className="text-sm text-gray-400 hover:text-[#4ea5ff] transition-colors duration-300">
                 {t('footer.links.about')}
               </Link>
@@ -51,17 +70,16 @@ const Footer = () => {
                 {t('footer.links.careers')}
               </Link>
             </div>
-            <div className="flex flex-col gap-3 mt-4">
-              <h2 className="text-lg font-medium">{t('footer.companyName')}</h2>
+
+            <div className="flex flex-col gap-3 mt-2">
+              <h4 className="text-lg font-medium">{t('footer.companyName')}</h4>
               <p className="text-sm text-gray-400 leading-relaxed">
                 <span className="text-gray-300">{t('footer.registeredOffice')}: </span>
                 {t('footer.registeredOfficeFull')}
               </p>
               <Button
-                onClick={() => {
-                  router.push('/contact');
-                }}
-                className="w-fit rounded-full mt-4 bg-white/10 hover:bg-[#1761b6] text-white border border-white/20 hover:border-transparent transition-all duration-300 px-6 py-5"
+                onClick={() => router.push('/contact')}
+                className="w-fit rounded-full mt-2 bg-white/10 hover:bg-[#1761b6] text-white border border-white/20 hover:border-transparent transition-all duration-300 px-6 py-5"
                 startContent={<MailIcon size={18} />}
               >
                 {t('footer.contactUs')}
@@ -69,9 +87,11 @@ const Footer = () => {
             </div>
           </div>
         </div>
+
+        {/* Bottom */}
         <div className="mt-16 flex justify-center border-t border-white/10 pt-8">
           <span className="text-sm text-gray-500 font-light tracking-wide">
-            &copy; 2026 BIT DA NANG. All rights reserved.
+            {t('footer.copyright')}
           </span>
         </div>
       </div>

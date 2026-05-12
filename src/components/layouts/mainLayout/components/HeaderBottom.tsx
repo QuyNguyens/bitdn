@@ -23,8 +23,8 @@ export default function HeaderBottom() {
   const { t } = useI18n();
 
   return (
-    <Navbar 
-      className="sticky top-0 z-50 bg-white/80 backdrop-blur-lg border-b border-gray-100/50 shadow-[0_4px_30px_rgba(0,0,0,0.03)] px-2" 
+    <Navbar
+      className="sticky top-0 z-50 bg-white/80 backdrop-blur-lg border-b border-gray-100/50 shadow-[0_4px_30px_rgba(0,0,0,0.03)] px-2"
       maxWidth="xl"
       onMenuOpenChange={setIsMenuOpen}
     >
@@ -36,7 +36,7 @@ export default function HeaderBottom() {
         <NavbarBrand className="h-10 flex items-center">
           <Link href="/" aria-label="Go to home">
             <img
-              src="/logo/logo_bit.jpg"
+              src="/logo/logo_bit.png"
               alt="logo bitdn"
               className="h-14 w-auto object-contain cursor-pointer"
             />
@@ -79,7 +79,12 @@ export default function HeaderBottom() {
           );
         })}
       </NavbarContent>
-      <NavbarContent justify="end">
+      <NavbarContent justify="end" className="gap-4">
+        <NavbarItem className="hidden md:flex">
+          <Link href="/contact" className="btn-primary text-xs px-5 py-2.5 shadow-sm">
+            {t('common.contact')}
+          </Link>
+        </NavbarItem>
         <NavbarItem>
           <LanguageSwitcher />
         </NavbarItem>

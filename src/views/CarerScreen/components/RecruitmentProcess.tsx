@@ -18,7 +18,7 @@ const RecruitmentProcess = () => {
     <div className="w-full py-20 bg-white">
       <div className="w-full lg:w-4/5 mx-auto px-6">
         <div className="text-center mb-16">
-          <span className="text-sm font-bold text-[#1761b6] uppercase tracking-widest">Join Us</span>
+          <span className="text-sm font-bold text-[#1761b6] uppercase tracking-widest">{t('careerExtra.process.badge')}</span>
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mt-2">
             {t('careerExtra.process.title')}
           </h2>

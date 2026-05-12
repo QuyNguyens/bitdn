@@ -6,6 +6,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
 import { ChevronLeft, ChevronRight, ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { useI18n } from '@/i18n/I18nProvider';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -23,11 +24,19 @@ type Props = {
 };
 
 const YouMightLikeSlider = ({ items }: Props) => {
+  const { t } = useI18n();
+
+  const translatedItems = items.map(item => ({
+    ...item,
+    title: t(`blog.posts.${item.id}.title`) || item.title,
+    description: t(`blog.posts.${item.id}.desc`) || item.description,
+  }));
+
   return (
     <section className="relative mx-auto w-full max-w-6xl px-4 md:px-6 py-16">
       {/* Title */}
       <div className="text-center mb-12">
-        <span className="text-sm font-bold text-[#1761b6] uppercase tracking-widest">Recommended</span>
+        <span className="text-sm font-bold text-[#1761b6] uppercase tracking-widest">{t('serviceExtra.recommended')}</span>
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -35,8 +44,9 @@ const YouMightLikeSlider = ({ items }: Props) => {
           transition={{ duration: 0.6 }}
           className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight mt-2"
         >
-          You <span className="text-gradient">Might Like</span>
+          <span className="text-gradient">{t('serviceExtra.youMightLike')}</span>
         </motion.h2>
+        <div className="divider-gradient mt-4" />
       </div>
 
       {/* Navigation buttons - placed at top right or sides */}
@@ -64,7 +74,7 @@ const YouMightLikeSlider = ({ items }: Props) => {
           }}
           className="pb-4"
         >
-          {items.map((item) => (
+          {translatedItems.map((item) => (
             <SwiperSlide key={item.id}>
               <div className="flex flex-col bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-lg transition-all duration-500 overflow-hidden h-full group">
                 {/* Image */}
@@ -92,7 +102,7 @@ const YouMightLikeSlider = ({ items }: Props) => {
                     href={item.href}
                     className="inline-flex items-center gap-2 text-sm font-semibold text-[#1761b6] group/link w-fit"
                   >
-                    Read more 
+                    {t('common.readMore')}
                     <ArrowRight size={16} className="transition-transform group-hover/link:translate-x-1" />
                   </Link>
                 </div>

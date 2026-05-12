@@ -31,12 +31,12 @@ const WhyChooseCard = ({ icon: Icon, title, desc }: Props) => {
         group
         rounded-2xl
         bg-white
-        border border-gray-200
+        border border-gray-100
         p-8
         text-center
         shadow-md
         transition-all
-        duration-300
+        duration-500
         hover:-translate-y-2
         hover:shadow-xl
         hover:border-[#1761b6]/30
@@ -59,12 +59,13 @@ const WhyChooseCard = ({ icon: Icon, title, desc }: Props) => {
           group-hover:bg-[#1761b6]
           group-hover:text-white
           group-hover:shadow-lg
+          group-hover:scale-110
         "
       >
         <Icon size={26} />
       </div>
 
-      <h3 className="mb-3 text-lg font-bold text-gray-900 tracking-tight">{title}</h3>
+      <h3 className="mb-3 text-lg font-bold text-gray-900 tracking-tight group-hover:text-[#1761b6] transition-colors">{title}</h3>
 
       <p className="text-sm text-gray-600 leading-relaxed">{desc}</p>
     </motion.div>

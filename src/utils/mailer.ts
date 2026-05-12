@@ -51,3 +51,25 @@ export const sendContactEmail = async (data: ContactFormPayload) => {
     category: 'Contact Form',
   });
 };
+
+export const sendSubscriptionEmail = async (email: string) => {
+  const html = `
+  <div style="font-family:Arial;max-width:600px;margin:auto;padding:20px;border:1px solid #eee;border-radius:10px">
+    <h2 style="color:#1761b6">Chào mừng bạn đến với BIT Da Nang</h2>
+    <p>Cảm ơn bạn đã đăng ký nhận tin tức mới nhất từ chúng tôi.</p>
+    <p>Chúng tôi sẽ gửi cho bạn những cập nhật thú vị về công nghệ, AI và các giải pháp phần mềm hàng đầu định kỳ.</p>
+    <hr />
+    <p style="font-size:12px;color:#777">
+      Đây là email tự động, vui lòng không trả lời.
+    </p>
+  </div>
+  `;
+
+  await transporter.sendMail({
+    from: sender,
+    to: [email],
+    subject: 'Xác nhận đăng ký nhận tin tại BIT Da Nang',
+    html,
+    category: 'Newsletter Subscription',
+  });
+};

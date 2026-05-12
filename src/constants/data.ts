@@ -1,5 +1,18 @@
 import { JobDetail } from '@/types/jobCard';
 import { SuggestItem } from '@/types/suggest';
+import { 
+  Zap, 
+  Shield, 
+  Globe, 
+  MessageSquare, 
+  PenTool, 
+  Code, 
+  Rocket, 
+  Lightbulb, 
+  Layers, 
+  Search, 
+  Cpu 
+} from 'lucide-react';
 
 export type SelectOption = {
   key: string;
@@ -177,7 +190,7 @@ export const YOU_MIGHT_LIKE_DATA: SuggestItem[] = [
     description:
       '2025 marked a pivotal year for AI accelerated adoption across a wide range of industries. Looking ahead in 2026, understanding the emerging trends that will define the next phase of AI’s evolution is essential for businesses who want to stay competitive.',
     image: '/images/ai-trends-2026.png',
-    href: '/#',
+    href: '/blog/1',
   },
   {
     id: '2',
@@ -185,7 +198,7 @@ export const YOU_MIGHT_LIKE_DATA: SuggestItem[] = [
     description:
       'From customer support automation to content generation and internal knowledge assistants, generative AI is transforming how modern businesses operate. Discover real-world use cases you can apply today.',
     image: '/images/generative-ai-business.png',
-    href: '/#',
+    href: '/blog/2',
   },
   {
     id: '3',
@@ -193,7 +206,7 @@ export const YOU_MIGHT_LIKE_DATA: SuggestItem[] = [
     description:
       'AI-powered coding assistants, automated testing, and intelligent code reviews are redefining the software development lifecycle. Learn how development teams can adapt and thrive in this new era.',
     image: '/images/ai-software-development.png',
-    href: '/#',
+    href: '/blog/3',
   },
   {
     id: '4',
@@ -201,6 +214,75 @@ export const YOU_MIGHT_LIKE_DATA: SuggestItem[] = [
     description:
       'As AI adoption grows, data privacy and regulatory compliance become critical challenges. This article explores best practices for building AI systems that respect user data and comply with global regulations.',
     image: '/images/dell-AI-Factory.png',
-    href: '/#',
+    href: '/blog/4',
   },
 ];
+
+export const SLUG_DETAILS_DATA: Record<string, any> = {
+  design: {
+    benefits: [
+      { icon: Lightbulb, key: 'benefit1' },
+      { icon: Layers, key: 'benefit2' },
+      { icon: Zap, key: 'benefit3' }
+    ],
+    process: [
+      { icon: Search, key: 'step1' },
+      { icon: Layers, key: 'step2' },
+      { icon: PenTool, key: 'step3' },
+      { icon: Zap, key: 'step4' }
+    ],
+    tech: ['Figma', 'Adobe Creative Cloud', 'Framer', 'Principle']
+  },
+  development: {
+    benefits: [
+      { icon: Cpu, key: 'benefit1' },
+      { icon: Shield, key: 'benefit2' },
+      { icon: Layers, key: 'benefit3' }
+    ],
+    process: [
+      { icon: Code, key: 'step1' },
+      { icon: Layers, key: 'step2' },
+      { icon: Shield, key: 'step3' },
+      { icon: Rocket, key: 'step4' }
+    ],
+    tech: ['Next.js', 'React Native', 'NestJS', 'Go', 'Docker', 'PostgreSQL']
+  },
+  deployment: {
+    benefits: [
+      { icon: Globe, key: 'benefit1' },
+      { icon: Shield, key: 'benefit2' },
+      { icon: Zap, key: 'benefit3' }
+    ],
+    process: [
+      { icon: Search, key: 'step1' },
+      { icon: Shield, key: 'step2' },
+      { icon: Rocket, key: 'step3' },
+      { icon: Zap, key: 'step4' }
+    ],
+    tech: ['AWS', 'Google Cloud', 'Kubernetes', 'Terraform', 'GitHub Actions']
+  },
+  default: {
+    benefits: [
+      { icon: Zap, key: 'benefit1' },
+      { icon: Shield, key: 'benefit2' },
+      { icon: Globe, key: 'benefit3' }
+    ],
+    process: [
+      { icon: MessageSquare, key: 'step1' },
+      { icon: PenTool, key: 'step2' },
+      { icon: Code, key: 'step3' },
+      { icon: Rocket, key: 'step4' }
+    ],
+    tech: ['Next.js', 'TypeScript', 'Node.js', 'AWS']
+  }
+};
+
+export const BLOG_TAGS = ['AI', 'Business', 'Tech', 'Software', 'DevOps', 'Mobile', 'Design'];
+
+export const BLOG_AUTHOR_INFO = {
+  name: 'BIT Da Nang Team',
+  role: 'Editor & Strategist',
+  linkedin: '#',
+  twitter: '#',
+  mail: 'mailto:contact@bitdanang.com'
+};

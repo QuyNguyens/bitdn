@@ -12,7 +12,7 @@ const messages = { vi, en, ja };
 type I18nContextType = {
   locale: Locale;
   setLocale: (l: Locale) => void;
-  t: (key: string) => string;
+  t: (key: string, values?: Record<string, string | number>) => string;
 };
 
 const I18nContext = createContext<I18nContextType | null>(null);
@@ -30,10 +30,16 @@ export function I18nProvider({ children }: { children: React.ReactNode }) {
     localStorage.setItem('locale', l);
   };
 
-  const t = (key: string) => {
-    return (
-      key.split('.').reduce((obj: any, k) => obj?.[k], messages[locale]) ?? key
-    );
+  const t = (key: string, values?: Record<string, string | number>) => {
+    let message = key.split('.').reduce((obj: any, k) => obj?.[k], messages[locale]) ?? key;
+    
+    if (values && typeof message === 'string') {
+      Object.entries(values).forEach(([k, v]) => {
+        message = message.replace(`{${k}}`, String(v));
+      });
+    }
+    
+    return message;
   };
 
   return (

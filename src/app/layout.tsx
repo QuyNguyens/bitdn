@@ -18,6 +18,9 @@ export const metadata: Metadata = {
   title: 'Bit Da Nang | Giải pháp công nghệ hàng đầu',
   description: 'Công ty Bit Đà Nẵng cung cấp các giải pháp phần mềm, phát triển ứng dụng di động và website chuyên nghiệp, uy tín hàng đầu tại Đà Nẵng.',
   keywords: 'Bit Da Nang, công ty phần mềm Đà Nẵng, thiết kế website, ứng dụng di động, giải pháp công nghệ',
+  icons: {
+    icon: '/bitdn-192x192.svg',
+  },
   openGraph: {
     title: 'Bit Da Nang | Giải pháp công nghệ hàng đầu',
     description: 'Công ty Bit Đà Nẵng cung cấp các giải pháp phần mềm, phát triển ứng dụng di động và website chuyên nghiệp.',

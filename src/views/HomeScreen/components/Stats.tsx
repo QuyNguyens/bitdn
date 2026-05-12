@@ -3,19 +3,24 @@
 import { motion, useMotionValue, useTransform, animate } from 'framer-motion';
 import { Users, Award, Globe, Rocket } from 'lucide-react';
 import { useEffect, useRef } from 'react';
+import { useInView } from 'framer-motion';
 import { useI18n } from '@/i18n/I18nProvider';
 
 // Small component for count up animation
 const Counter = ({ value }: { value: number }) => {
   const count = useMotionValue(0);
   const rounded = useTransform(count, (latest) => Math.round(latest));
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   useEffect(() => {
-    const controls = animate(count, value, { duration: 2, ease: 'easeOut' });
-    return controls.stop;
-  }, [value]);
+    if (isInView) {
+      const controls = animate(count, value, { duration: 2, ease: 'easeOut' });
+      return controls.stop;
+    }
+  }, [value, isInView, count]);
 
-  return <motion.span>{rounded}</motion.span>;
+  return <motion.span ref={ref}>{rounded}</motion.span>;
 };
 
 const Stats = () => {

@@ -52,7 +52,7 @@ const Service = () => {
       >
         {/* Title & Intro */}
         <motion.div variants={itemVariants} className="text-center space-y-4">
-          <span className="text-sm font-bold text-[#1761b6] uppercase tracking-widest">Our Services</span>
+          <span className="text-sm font-bold text-[#1761b6] uppercase tracking-widest">{t('services.badge')}</span>
           <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-gray-900 mt-2">
             {t('services.title')}
           </h3>

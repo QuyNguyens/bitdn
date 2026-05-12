@@ -7,12 +7,12 @@ import { motion } from 'framer-motion';
 const Banner = () => {
   const { t } = useI18n();
 
-  const slogan = t('contact.description').split(' ');
+  const slogan = t('serviceExtra.intro').split(' ');
   return (
     <div className="relative mt-2 h-[50vh] w-full overflow-hidden md:mt-0 lg:h-[65vh]">
       {/* Background image */}
       <Image
-        src="/images/service_banner.png"
+        src="/images/service.png"
         alt="Service Banner"
         fill
         className="object-cover object-center"
@@ -31,7 +31,7 @@ const Banner = () => {
           transition={{ duration: 0.8 }}
           className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight drop-shadow-md"
         >
-          {t('common.contact')}
+          {t('menu.service')}
         </motion.h1>
 
         {/* Slogan */}
