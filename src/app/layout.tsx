@@ -15,15 +15,34 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://bitdanang.com'),
   title: 'Bit Da Nang | Giải pháp công nghệ hàng đầu',
   description: 'Công ty Bit Đà Nẵng cung cấp các giải pháp phần mềm, phát triển ứng dụng di động và website chuyên nghiệp, uy tín hàng đầu tại Đà Nẵng.',
   keywords: 'Bit Da Nang, công ty phần mềm Đà Nẵng, thiết kế website, ứng dụng di động, giải pháp công nghệ',
+  alternates: {
+    canonical: 'https://bitdanang.com',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
   icons: {
-    icon: '/bitdn-192x192.svg',
+    icon: [
+      { url: '/bitdn-192x192.svg', type: 'image/svg+xml' },
+      { url: '/favicon.ico', sizes: 'any' },
+    ],
+    apple: '/bitdn-192x192.svg',
   },
   openGraph: {
     title: 'Bit Da Nang | Giải pháp công nghệ hàng đầu',
-    description: 'Công ty Bit Đà Nẵng cung cấp các giải pháp phần mềm, phát triển ứng dụng di động và website chuyên nghiệp.',
+    description: 'Công ty Bit Đà Nẵng cung cấp các giải pháp phần mềm, phát triển ứng dụng di động và website chuyên nghiệp, uy tín hàng đầu tại Đà Nẵng.',
     url: 'https://bitdanang.com',
     siteName: 'Bit Da Nang',
     images: [
@@ -36,6 +55,12 @@ export const metadata: Metadata = {
     ],
     locale: 'vi_VN',
     type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Bit Da Nang | Giải pháp công nghệ hàng đầu',
+    description: 'Công ty Bit Đà Nẵng cung cấp các giải pháp phần mềm, phát triển ứng dụng di động và website chuyên nghiệp, uy tín hàng đầu tại Đà Nẵng.',
+    images: ['/images/banner_home.png'],
   },
 };
 

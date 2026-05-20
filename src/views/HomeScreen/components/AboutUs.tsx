@@ -33,7 +33,7 @@ const AboutUs = () => {
       <motion.div variants={fadeUp}>
         <div className="w-full flex gap-6 items-center justify-center">
           <Divider className="my-4 w-20 h-0.5" />
-          <h3 className="text-3xl font-bold">{t('about.title')}</h3>
+          <h3 className="text-[26px] md:text-3xl font-bold">{t('about.title')}</h3>
           <Divider className="my-4 w-20 h-0.5" />
         </div>
 
