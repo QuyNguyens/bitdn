@@ -2,13 +2,14 @@ import nodemailer from 'nodemailer';
 import { MailtrapTransport } from 'mailtrap';
 import type { ContactFormPayload } from '@/types/contact';
 
-const TOKEN = '30451a1f90418ce7e20926c2a597f31d';
+const TOKEN = process.env.MAILTRAP_TOKEN || '';
+const TEST_INBOX_ID = process.env.MAILTRAP_TEST_INBOX_ID ? Number(process.env.MAILTRAP_TEST_INBOX_ID) : undefined;
 
 const transporter = nodemailer.createTransport(
   MailtrapTransport({
     token: TOKEN,
     sandbox: true,
-    testInboxId: 4334748,
+    testInboxId: TEST_INBOX_ID,
   }),
 );
 

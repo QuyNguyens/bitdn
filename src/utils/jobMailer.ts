@@ -3,13 +3,15 @@ import nodemailer from 'nodemailer';
 import { MailtrapTransport } from 'mailtrap';
 import { ApplicationFormPayload } from '@/types/contact';
 
-const TOKEN = '30451a1f90418ce7e20926c2a597f31d';
+const TOKEN = process.env.MAILTRAP_TOKEN || '';
+const TEST_INBOX_ID = process.env.MAILTRAP_TEST_INBOX_ID ? Number(process.env.MAILTRAP_TEST_INBOX_ID) : undefined;
+const RECEIVER_EMAIL = process.env.RECEIVER_EMAIL || 'hr@bitdn.test';
 
 const transporter = nodemailer.createTransport(
   MailtrapTransport({
     token: TOKEN,
     sandbox: true,
-    testInboxId: 4334748,
+    testInboxId: TEST_INBOX_ID,
   }),
 );
 
@@ -52,7 +54,7 @@ export const sendJobApplicationEmail = async (data: ApplicationFormPayload) => {
 
   await transporter.sendMail({
     from: sender,
-    to: ['hr@bitdn.test'], // gửi về email của bạn
+    to: [RECEIVER_EMAIL], // gửi về email của bạn
     subject: `New Job Application - ${data.fullName}`,
     html,
     attachments,

@@ -1,17 +1,18 @@
 import { JobDetail } from '@/types/jobCard';
 import { SuggestItem } from '@/types/suggest';
-import { 
-  Zap, 
-  Shield, 
-  Globe, 
-  MessageSquare, 
-  PenTool, 
-  Code, 
-  Rocket, 
-  Lightbulb, 
-  Layers, 
-  Search, 
-  Cpu 
+import {
+  Zap,
+  Shield,
+  Globe,
+  MessageSquare,
+  PenTool,
+  Code,
+  Rocket,
+  Lightbulb,
+  Layers,
+  Search,
+  Cpu,
+  LucideIcon,
 } from 'lucide-react';
 
 export type SelectOption = {
@@ -216,65 +217,103 @@ export const YOU_MIGHT_LIKE_DATA: SuggestItem[] = [
     image: '/images/dell-AI-Factory.png',
     href: '/blog/4',
   },
+  {
+    id: '5',
+    title: 'DevOps in 2026: From CI/CD to AI-Driven Operations',
+    description:
+      'Modern DevOps has evolved far beyond continuous integration. Explore how AI-powered monitoring, self-healing infrastructure, and intelligent deployment pipelines are transforming how software teams ship at scale.',
+    image: '/images/ai-software-development.png',
+    href: '/blog/5',
+  },
+  {
+    id: '6',
+    title: 'Mobile-First Strategy: Building for the Next Billion Users',
+    description:
+      "With over 6 billion smartphone users globally, mobile-first is no longer a strategy – it's a necessity. Discover the frameworks, UX patterns, and performance techniques shaping the future of mobile app development.",
+    image: '/images/generative-ai-business.png',
+    href: '/blog/6',
+  },
+  {
+    id: '7',
+    title: 'Cloud Architecture Patterns Every Tech Lead Should Know',
+    description:
+      'From microservices to serverless and event-driven design, modern cloud architectures demand careful thought. This guide walks through the key patterns and trade-offs every engineering leader must understand in 2026.',
+    image: '/images/dell-AI-Factory.png',
+    href: '/blog/7',
+  },
+  {
+    id: '8',
+    title: 'The Art of UI/UX Design: Creating Interfaces Users Love',
+    description:
+      'Great design is invisible – it just works. Explore the principles of human-centered design, the role of micro-interactions, and how cutting-edge design systems like Figma and Framer are reshaping product experiences.',
+    image: '/images/ai-trends-2026.png',
+    href: '/blog/8',
+  },
 ];
 
-export const SLUG_DETAILS_DATA: Record<string, any> = {
+export type SlugDetail = {
+  benefits: { icon: LucideIcon; key: string }[];
+  process: { icon: LucideIcon; key: string }[];
+  tech: string[];
+};
+
+export const SLUG_DETAILS_DATA: Record<string, SlugDetail> = {
   design: {
     benefits: [
       { icon: Lightbulb, key: 'benefit1' },
       { icon: Layers, key: 'benefit2' },
-      { icon: Zap, key: 'benefit3' }
+      { icon: Zap, key: 'benefit3' },
     ],
     process: [
       { icon: Search, key: 'step1' },
       { icon: Layers, key: 'step2' },
       { icon: PenTool, key: 'step3' },
-      { icon: Zap, key: 'step4' }
+      { icon: Zap, key: 'step4' },
     ],
-    tech: ['Figma', 'Adobe Creative Cloud', 'Framer', 'Principle']
+    tech: ['Figma', 'Adobe Creative Cloud', 'Framer', 'Principle'],
   },
   development: {
     benefits: [
       { icon: Cpu, key: 'benefit1' },
       { icon: Shield, key: 'benefit2' },
-      { icon: Layers, key: 'benefit3' }
+      { icon: Layers, key: 'benefit3' },
     ],
     process: [
       { icon: Code, key: 'step1' },
       { icon: Layers, key: 'step2' },
       { icon: Shield, key: 'step3' },
-      { icon: Rocket, key: 'step4' }
+      { icon: Rocket, key: 'step4' },
     ],
-    tech: ['Next.js', 'React Native', 'NestJS', 'Go', 'Docker', 'PostgreSQL']
+    tech: ['Next.js', 'React Native', 'NestJS', 'Go', 'Docker', 'PostgreSQL'],
   },
   deployment: {
     benefits: [
       { icon: Globe, key: 'benefit1' },
       { icon: Shield, key: 'benefit2' },
-      { icon: Zap, key: 'benefit3' }
+      { icon: Zap, key: 'benefit3' },
     ],
     process: [
       { icon: Search, key: 'step1' },
       { icon: Shield, key: 'step2' },
       { icon: Rocket, key: 'step3' },
-      { icon: Zap, key: 'step4' }
+      { icon: Zap, key: 'step4' },
     ],
-    tech: ['AWS', 'Google Cloud', 'Kubernetes', 'Terraform', 'GitHub Actions']
+    tech: ['AWS', 'Google Cloud', 'Kubernetes', 'Terraform', 'GitHub Actions'],
   },
   default: {
     benefits: [
       { icon: Zap, key: 'benefit1' },
       { icon: Shield, key: 'benefit2' },
-      { icon: Globe, key: 'benefit3' }
+      { icon: Globe, key: 'benefit3' },
     ],
     process: [
       { icon: MessageSquare, key: 'step1' },
       { icon: PenTool, key: 'step2' },
       { icon: Code, key: 'step3' },
-      { icon: Rocket, key: 'step4' }
+      { icon: Rocket, key: 'step4' },
     ],
-    tech: ['Next.js', 'TypeScript', 'Node.js', 'AWS']
-  }
+    tech: ['Next.js', 'TypeScript', 'Node.js', 'AWS'],
+  },
 };
 
 export const BLOG_TAGS = ['AI', 'Business', 'Tech', 'Software', 'DevOps', 'Mobile', 'Design'];
@@ -284,5 +323,5 @@ export const BLOG_AUTHOR_INFO = {
   role: 'Editor & Strategist',
   linkedin: '#',
   twitter: '#',
-  mail: 'mailto:contact@bitdanang.com'
+  mail: 'mailto:contact@bitdanang.com',
 };

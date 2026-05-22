@@ -1,7 +1,5 @@
 'use client';
-import { useEffect, useState } from 'react';
 import Banner from './components/Banner';
-import { JobDetail as JobDetailData } from '@/types/jobCard';
 import { useParams } from 'next/navigation';
 import { JOBS } from '@/constants/data';
 import JobDetail from './components/JobDetail';
@@ -10,7 +8,6 @@ import Link from 'next/link';
 import { useI18n } from '@/i18n/I18nProvider';
 
 const JobDetailScreen = () => {
-  const [jobDetail, setJobDetail] = useState<JobDetailData | undefined>();
   const params = useParams();
   const slug = params.slug as string;
   const { t } = useI18n();
@@ -19,14 +16,11 @@ const JobDetailScreen = () => {
     return title.toLowerCase().replaceAll(' ', '-') + '-' + id;
   };
 
-  useEffect(() => {
-    const job = JOBS.filter((j) => generateJobSlug(j.title, j.id) === slug)[0];
-    setJobDetail(job);
-  }, [slug]);
+  const jobDetail = JOBS.find((j) => generateJobSlug(j.title, j.id) === slug);
 
   return (
     <div className="flex flex-col">
-      <Banner title={jobDetail?.title || ''} />
+      <Banner />
 
       {/* Breadcrumb - outside banner */}
       <nav className="w-full md:w-4/5 lg:w-3/5 mx-auto px-4 md:px-0 py-5 border-b border-gray-100">

@@ -1,7 +1,8 @@
 import { motion, Variants } from 'framer-motion';
+import { LucideIcon } from 'lucide-react';
 
 type Props = {
-  icon: any;
+  icon: LucideIcon;
   title: string;
   desc: string;
 };

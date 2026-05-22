@@ -9,11 +9,18 @@ const GlobalLoading = () => {
 
   // Hiện loading khi ứng dụng lần đầu load
   useEffect(() => {
-    setVisible(true);
+    const showTimer = setTimeout(() => {
+      setVisible(true);
+    }, 0);
+
     const timer = setTimeout(() => {
       setVisible(false);
     }, 400);
-    return () => clearTimeout(timer);
+
+    return () => {
+      clearTimeout(showTimer);
+      clearTimeout(timer);
+    };
   }, [pathname]);
 
   if (!visible) return null;

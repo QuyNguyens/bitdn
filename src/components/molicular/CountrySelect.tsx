@@ -9,6 +9,13 @@ type CountryOption = {
   label: string; // country name
 };
 
+type RestCountry = {
+  cca2: string;
+  name: {
+    common: string;
+  };
+};
+
 type CountrySelectProps = {
   value?: string; // cca2 hiện tại (VD: 'VN')
   onChange?: (value: string) => void;
@@ -29,14 +36,14 @@ const CountrySelect = ({
   async function getCountries() {
     const res = await fetch('https://restcountries.com/v3.1/all?fields=name,cca2');
 
-    const data = await res.json();
+    const data = (await res.json()) as RestCountry[];
 
     return data
-      .map((c: any) => ({
+      .map((c) => ({
         key: c.cca2,
         label: c.name.common,
       }))
-      .sort((a: any, b: any) => a.label.localeCompare(b.label));
+      .sort((a, b) => a.label.localeCompare(b.label));
   }
 
   useEffect(() => {

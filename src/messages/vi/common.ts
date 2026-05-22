@@ -3,6 +3,7 @@ export default {
     home: 'Trang chủ',
     aboutUs: 'Thông tin công ty',
     service: 'Dịch vụ',
+    blog: 'Tin tức & Blog',
     contact: 'Liên hệ',
     career: 'Tuyển dụng',
   },

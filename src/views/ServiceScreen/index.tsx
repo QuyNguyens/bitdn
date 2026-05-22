@@ -8,9 +8,7 @@ import WorkProcess from './components/WorkProcess';
 import Commitments from './components/Commitments';
 import FAQ from './components/FAQ';
 
-type Props = {};
-
-const ServiceScreen = (props: Props) => {
+const ServiceScreen = () => {
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 100,

@@ -1,6 +1,5 @@
 'use client';
 
-import { useI18n } from '@/i18n/I18nProvider';
 import Image from 'next/image';
 import JobSearchFilter from './JobSearchFilter';
 import { JobFilterValues } from '..';
@@ -12,7 +11,6 @@ type BannerProps = {
   handleSubmit: () => void;
 };
 const Banner = ({ filter, setFilter, handleSubmit }: BannerProps) => {
-  const { t } = useI18n();
 
   return (
     <div className="relative mt-2 h-[50vh] md:h-[60vh] w-full overflow-hidden md:mt-0">

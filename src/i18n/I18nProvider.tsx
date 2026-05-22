@@ -22,7 +22,11 @@ export function I18nProvider({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     const saved = localStorage.getItem('locale') as Locale | null;
-    if (saved) setLocale(saved);
+    if (saved) {
+      requestAnimationFrame(() => {
+        setLocale(saved);
+      });
+    }
   }, []);
 
   const changeLocale = (l: Locale) => {
@@ -30,16 +34,27 @@ export function I18nProvider({ children }: { children: React.ReactNode }) {
     localStorage.setItem('locale', l);
   };
 
-  const t = (key: string, values?: Record<string, string | number>) => {
-    let message = key.split('.').reduce((obj: any, k) => obj?.[k], messages[locale]) ?? key;
-    
-    if (values && typeof message === 'string') {
-      Object.entries(values).forEach(([k, v]) => {
-        message = message.replace(`{${k}}`, String(v));
-      });
+  const t = (key: string, values?: Record<string, string | number>): string => {
+    const message: unknown = key.split('.').reduce<unknown>(
+      (obj, k) => (obj && typeof obj === 'object' ? (obj as Record<string, unknown>)[k] : undefined),
+      messages[locale]
+    );
+
+    if (message === undefined) {
+      return key;
     }
-    
-    return message;
+
+    if (typeof message === 'string') {
+      let messageStr = message;
+      if (values) {
+        Object.entries(values).forEach(([k, v]) => {
+          messageStr = messageStr.replace(`{${k}}`, String(v));
+        });
+      }
+      return messageStr;
+    }
+
+    return message as unknown as string;
   };
 
   return (

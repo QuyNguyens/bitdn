@@ -1,14 +1,8 @@
 'use client';
 
 import Image from 'next/image';
-import { useI18n } from '@/i18n/I18nProvider';
 
-type BannerProps = {
-  title: string;
-};
-
-const Banner = ({ title }: BannerProps) => {
-  const { t } = useI18n();
+const Banner = () => {
   return (
     <div className="relative mt-2 h-[20vh] md:h-[25vh] w-full overflow-hidden md:mt-0">
       {/* Background image */}

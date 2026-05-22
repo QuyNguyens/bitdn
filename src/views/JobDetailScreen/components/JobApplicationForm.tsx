@@ -19,7 +19,7 @@ export default function JobApplicationForm() {
   });
 
   const updateField = (key: keyof ApplicationFormPayload, value: string | File | undefined) => {
-    setForm((prev: any) => ({
+    setForm((prev: ApplicationFormPayload) => ({
       ...prev,
       [key]: value,
     }));

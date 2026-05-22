@@ -1,5 +1,6 @@
 'use client';
 import React from 'react';
+import Image from 'next/image';
 import {
   Navbar,
   NavbarBrand,
@@ -35,10 +36,13 @@ export default function HeaderBottom() {
         />
         <NavbarBrand className="h-10 flex items-center">
           <Link href="/" aria-label="Go to home">
-            <img
+            <Image
               src="/logo/logo_bit.png"
               alt="logo bitdn"
+              width={200}
+              height={56}
               className="h-14 w-auto object-contain cursor-pointer"
+              priority
             />
           </Link>
         </NavbarBrand>

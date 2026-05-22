@@ -2,7 +2,6 @@
 
 import { useI18n } from '@/i18n/I18nProvider';
 import { motion } from 'framer-motion';
-import Image from 'next/image';
 import { User } from 'lucide-react';
 
 const CoreTeam = () => {

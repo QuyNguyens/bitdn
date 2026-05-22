@@ -1,5 +1,5 @@
 'use client';
-import { Clock, LucideIcon } from 'lucide-react';
+import { LucideIcon } from 'lucide-react';
 
 type TextIconProps = {
   icon: LucideIcon;

@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'next/navigation';
 import { YOU_MIGHT_LIKE_DATA, BLOG_TAGS, BLOG_AUTHOR_INFO } from '@/constants/data';
+import { SuggestItem } from '@/types/suggest';
 import { useI18n } from '@/i18n/I18nProvider';
 import Link from 'next/link';
 import {
@@ -28,8 +29,8 @@ const BlogDetailScreen = () => {
   const params = useParams();
   const id = params.id as string;
   const { t } = useI18n();
-  const [post, setPost] = useState<any>(null);
-  const [relatedPosts, setRelatedPosts] = useState<any[]>([]);
+  const [post, setPost] = useState<SuggestItem | null>(null);
+  const [relatedPosts, setRelatedPosts] = useState<SuggestItem[]>([]);
   const [email, setEmail] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [subMessage, setSubMessage] = useState({ text: '', type: '' });
@@ -44,7 +45,7 @@ const BlogDetailScreen = () => {
 
   useEffect(() => {
     const foundPost = YOU_MIGHT_LIKE_DATA.find((p) => p.id === id);
-    setPost(foundPost);
+    setPost(foundPost || null);
 
     // Filter related posts (exclude current)
     const filtered = YOU_MIGHT_LIKE_DATA.filter((p) => p.id !== id).slice(0, 3);
@@ -77,7 +78,7 @@ const BlogDetailScreen = () => {
         const errorData = await res.json();
         setSubMessage({ text: errorData.message || t('blog.newsletter.serverError'), type: 'error' });
       }
-    } catch (error) {
+    } catch {
       setSubMessage({ text: t('blog.newsletter.serverError'), type: 'error' });
     } finally {
       setIsSubmitting(false);
@@ -203,7 +204,7 @@ const BlogDetailScreen = () => {
 
                   <blockquote className="bg-gray-50 p-8 rounded-2xl border-l-8 border-[#1761b6] italic text-xl text-gray-800 my-10 relative">
                     <span className="absolute top-4 left-4 text-6xl text-blue-100 font-serif opacity-50">
-                      "
+                      &quot;
                     </span>
                     {t(`blog.posts.${id}.quote`)}
                   </blockquote>
@@ -304,7 +305,7 @@ const BlogDetailScreen = () => {
             {/* Navigation Posts */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
               <Link
-                href="/service"
+                href="/blog"
                 className="group flex items-center gap-4 p-6 bg-white rounded-2xl border border-gray-100 hover:border-blue-200 transition-all shadow-sm"
               >
                 <div className="w-10 h-10 rounded-full bg-gray-50 flex items-center justify-center text-gray-400 group-hover:bg-blue-600 group-hover:text-white transition-all">

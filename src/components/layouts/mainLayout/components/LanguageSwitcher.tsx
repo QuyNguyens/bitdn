@@ -21,16 +21,10 @@ const LANGS: Lang[] = [
 export default function LanguageSwitcher() {
   const { locale, setLocale } = useI18n();
 
-  const [current, setCurrent] = useState<Lang>(LANGS[0]);
+  const current = LANGS.find((l) => l.key === locale) || LANGS[0];
   const [open, setOpen] = useState(false);
 
   const wrapperRef = useRef<HTMLDivElement>(null);
-
-  // Sync current language từ locale
-  useEffect(() => {
-    const lang = LANGS.find((l) => l.key === locale);
-    if (lang) setCurrent(lang);
-  }, [locale]);
 
   // Click outside → đóng popup
   useEffect(() => {
@@ -46,7 +40,6 @@ export default function LanguageSwitcher() {
 
   const handleSelect = (lang: Lang) => {
     setLocale(lang.key);
-    setCurrent(lang);
     setOpen(false); // 👈 đóng popup khi chọn
   };
 

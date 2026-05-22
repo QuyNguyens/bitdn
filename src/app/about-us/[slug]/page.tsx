@@ -14,6 +14,16 @@ import {
 import Link from 'next/link';
 import { SLUG_DETAILS_DATA } from '@/constants/data';
 
+type FAQItem = {
+  q: string;
+  a: string;
+};
+
+type WhyChooseUsItem = {
+  title: string;
+  desc: string;
+};
+
 export default function AboutUsDetailPage() {
   const params = useParams();
   const slug = params.slug as string;
@@ -114,7 +124,7 @@ export default function AboutUsDetailPage() {
                 {t('serviceExtra.commitments.title')}
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                {slugConfig.benefits.map((item: any, idx: number) => (
+                {slugConfig.benefits.map((item, idx) => (
                   <motion.div 
                     key={idx}
                     initial={{ opacity: 0, scale: 0.95 }}
@@ -146,7 +156,7 @@ export default function AboutUsDetailPage() {
                 {/* Timeline line */}
                 <div className="absolute left-6 top-2 bottom-2 w-0.5 bg-gray-100" />
                 
-                {slugConfig.process.map((step: any, idx: number) => (
+                {slugConfig.process.map((step, idx) => (
                   <motion.div 
                     key={idx}
                     initial={{ opacity: 0, x: -20 }}
@@ -191,7 +201,7 @@ export default function AboutUsDetailPage() {
                 {t('serviceExtra.faq.title')}
               </h3>
               <div className="space-y-4">
-                {(t(`features.${slug}.faqs`) as unknown as any[] || []).map((faq, idx) => (
+                {(t(`features.${slug}.faqs`) as unknown as FAQItem[] || []).map((faq, idx) => (
                   <div key={idx} className="bg-white p-6 rounded-2xl border border-gray-100">
                     <h4 className="font-bold text-gray-900 mb-2 flex items-start gap-3">
                       <span className="text-blue-600">Q:</span> {faq.q}
@@ -229,7 +239,7 @@ export default function AboutUsDetailPage() {
                   {t('serviceExtra.whyChooseUs.title') || 'Why choose BIT Da Nang?'}
                 </h3>
                 <div className="space-y-6">
-                  {(t('serviceExtra.whyChooseUs.items') as unknown as any[] || []).map((item, idx) => (
+                  {(t('serviceExtra.whyChooseUs.items') as unknown as WhyChooseUsItem[] || []).map((item, idx) => (
                     <div key={idx} className="flex gap-4">
                       <div className="w-1.5 h-full min-h-[40px] bg-blue-100 rounded-full overflow-hidden">
                         <div className="w-full h-1/2 bg-blue-600" />

@@ -1,7 +1,6 @@
 'use client';
 
 import { useI18n } from '@/i18n/I18nProvider';
-import { motion } from 'framer-motion';
 
 const TechStack = () => {
   const { t } = useI18n();

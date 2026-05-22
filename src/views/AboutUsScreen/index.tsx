@@ -8,9 +8,7 @@ import CoreValues from './components/CoreValues';
 import CoreTeam from './components/CoreTeam';
 import History from './components/History';
 
-type Props = {};
-
-const AboutUsScreen = (props: Props) => {
+const AboutUsScreen = () => {
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 100,

@@ -3,7 +3,7 @@
 import { useI18n } from '@/i18n/I18nProvider';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { Building2, MapPin, Globe } from 'lucide-react';
+import { Building2, Globe } from 'lucide-react';
 
 const CompanyInfoCard = () => {
   const { t } = useI18n();
