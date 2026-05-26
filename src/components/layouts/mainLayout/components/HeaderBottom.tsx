@@ -28,6 +28,7 @@ export default function HeaderBottom() {
       className="sticky top-0 z-50 bg-white/80 backdrop-blur-lg border-b border-gray-100/50 shadow-[0_4px_30px_rgba(0,0,0,0.03)] px-2"
       maxWidth="xl"
       onMenuOpenChange={setIsMenuOpen}
+      isMenuOpen={isMenuOpen}
     >
       <NavbarContent>
         <NavbarMenuToggle
@@ -93,21 +94,36 @@ export default function HeaderBottom() {
           <LanguageSwitcher />
         </NavbarItem>
       </NavbarContent>
-      <NavbarMenu>
-        {MENU_ITEMS.map((item, index) => (
-          <NavbarMenuItem key={`${item}-${index}`}>
-            <Link
-              className="w-full"
-              color={
-                index === 2 ? 'primary' : index === MENU_ITEMS.length - 1 ? 'danger' : 'foreground'
-              }
-              href={item.href}
-              size="lg"
-            >
-              {t(item.label)}
-            </Link>
-          </NavbarMenuItem>
-        ))}
+      <NavbarMenu className="pt-6 pb-8 px-6 bg-white/95 backdrop-blur-xl flex flex-col gap-3 shadow-[0_8px_30px_rgba(0,0,0,0.08)] border-t border-gray-100/50">
+        {MENU_ITEMS.map((item, index) => {
+          const isActive = pathname === item.href;
+          return (
+            <NavbarMenuItem key={`${item.label}-${index}`}>
+              <Link
+                className={`w-full flex items-center px-5 py-3.5 rounded-2xl transition-all duration-300 ${
+                  isActive
+                    ? 'bg-primary/10 text-primary font-semibold shadow-sm'
+                    : 'text-gray-700 hover:bg-gray-50 hover:text-primary font-medium'
+                }`}
+                href={item.href}
+                size="lg"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {t(item.label)}
+              </Link>
+            </NavbarMenuItem>
+          );
+        })}
+        
+        <NavbarMenuItem className="mt-4 pt-6 border-t border-gray-100/80 md:hidden">
+          <Link
+            href="/contact"
+            className="w-full flex justify-center btn-primary py-3.5 rounded-2xl shadow-md font-medium text-white transition-transform active:scale-95"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            {t('common.contact')}
+          </Link>
+        </NavbarMenuItem>
       </NavbarMenu>
     </Navbar>
   );
