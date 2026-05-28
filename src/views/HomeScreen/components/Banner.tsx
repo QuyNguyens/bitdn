@@ -39,28 +39,10 @@ const Banner = () => {
 
       {/* Floating Gradient Orbs for "WOW" effect */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <motion.div
-          animate={{
-            y: [0, -20, 0],
-            x: [0, 10, 0],
-          }}
-          transition={{
-            duration: 8,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
+        <div
           className="absolute top-[20%] left-[10%] w-72 h-72 bg-blue-500/20 rounded-full filter blur-3xl"
         />
-        <motion.div
-          animate={{
-            y: [0, 30, 0],
-            x: [0, -20, 0],
-          }}
-          transition={{
-            duration: 10,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
+        <div
           className="absolute bottom-[20%] right-[10%] w-96 h-96 bg-purple-500/10 rounded-full filter blur-3xl"
         />
       </div>
@@ -100,8 +82,8 @@ const Banner = () => {
           {slogan.map((word, index) => (
             <motion.span
               key={index}
-              initial={{ opacity: 0, y: 20, filter: 'blur(10px)' }}
-              animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{
                 duration: 0.6,
                 delay: index * 0.15 + 0.5,
