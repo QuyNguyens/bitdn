@@ -35,9 +35,7 @@ const Stats = () => {
 
   return (
     <div className="w-full bg-gradient-to-r from-[#0f172a] to-[#1e293b] py-24 text-white relative overflow-hidden">
-      {/* Glow effect */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-blue-600/20 blur-[100px] rounded-full pointer-events-none" />
-      
+
       <div className="relative z-10 w-full lg:w-4/5 mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 px-6">
         {stats.map((item, index) => (
           <motion.div 
