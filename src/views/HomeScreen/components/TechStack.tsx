@@ -35,7 +35,7 @@ const TechStack = () => {
       </div>
 
       {/* Marquee effect */}
-      <div className="relative w-full max-w-7xl mx-auto flex overflow-hidden">
+      <div className="relative w-full max-w-7xl mx-auto flex overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_20%,black_80%,transparent)]">
         <div className="flex gap-6 py-4 animate-marquee whitespace-nowrap">
           {duplicatedTechs.map((tech, index) => (
             <div 
