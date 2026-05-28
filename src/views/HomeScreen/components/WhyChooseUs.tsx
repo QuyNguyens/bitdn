@@ -35,7 +35,6 @@ const WhyChooseUs = () => {
 
       {/* Modern Overlay Gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-black/60 to-primary/40" />
-      <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 pointer-events-none mix-blend-overlay" />
 
       {/* Content */}
       <WrapComponent>
