@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useMemo } from 'react';
-import { motion, useScroll, useSpring } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { YOU_MIGHT_LIKE_DATA, BLOG_TAGS } from '@/constants/data';
 import { useI18n } from '@/i18n/I18nProvider';
 import Link from 'next/link';
@@ -63,13 +63,6 @@ const BlogScreen = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedTag, setSelectedTag] = useState<string | null>(null);
 
-  const { scrollYProgress } = useScroll();
-  const scaleX = useSpring(scrollYProgress, {
-    stiffness: 100,
-    damping: 30,
-    restDelta: 0.001,
-  });
-
   // Featured post is always the first one
   const featuredPost = YOU_MIGHT_LIKE_DATA[0];
 
@@ -93,12 +86,6 @@ const BlogScreen = () => {
 
   return (
     <div className="flex flex-col min-h-screen bg-[#f5f7fb]">
-      {/* Reading Progress Bar */}
-      <motion.div
-        className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#1761b6] to-[#38bdf8] z-[100] origin-left"
-        style={{ scaleX }}
-      />
-
       {/* ===== Hero Banner ===== */}
       <div className="w-full bg-gradient-to-br from-[#0f2d5c] via-[#1761b6] to-[#1e40af] text-white pt-32 pb-24 relative overflow-hidden">
         {/* Decorative blobs */}

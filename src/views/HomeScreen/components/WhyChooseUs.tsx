@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { useRef } from 'react';
 import WhyChooseCard from '@/components/molicular/WhyChooseCard';
 import WrapComponent from '@/components/molicular/WrapComponent';
@@ -21,28 +21,20 @@ const WhyChooseUs = () => {
   const { t } = useI18n();
   const sectionRef = useRef(null);
 
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ['start end', 'end start'],
-  });
-
-  const yBackground = useTransform(scrollYProgress, [0, 1], ['-20%', '20%']);
-
   return (
     <section ref={sectionRef} className="relative overflow-hidden py-24 my-10">
-      {/* Background image with Parallax */}
-      <motion.div style={{ y: yBackground }} className="absolute inset-0 h-[140%] w-full top-[-20%]">
+      {/* Background image */}
+      <div className="absolute inset-0 h-full w-full">
         <Image
           src="/images/banner_home.png"
           alt="Why choose us background"
           fill
           className="object-cover"
         />
-      </motion.div>
+      </div>
 
       {/* Modern Overlay Gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-black/60 to-primary/40" />
-      <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 pointer-events-none mix-blend-overlay" />
 
       {/* Content */}
       <WrapComponent>

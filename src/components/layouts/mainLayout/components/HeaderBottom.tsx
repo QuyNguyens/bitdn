@@ -25,7 +25,7 @@ export default function HeaderBottom() {
 
   return (
     <Navbar
-      className="sticky top-0 z-50 bg-white/80 backdrop-blur-lg border-b border-gray-100/50 shadow-[0_4px_30px_rgba(0,0,0,0.03)] px-2"
+      className="sticky top-0 z-50 bg-white/95 border-b border-gray-100/50 shadow-[0_4px_30px_rgba(0,0,0,0.03)] px-2"
       maxWidth="xl"
       onMenuOpenChange={setIsMenuOpen}
       isMenuOpen={isMenuOpen}
@@ -94,7 +94,7 @@ export default function HeaderBottom() {
           <LanguageSwitcher />
         </NavbarItem>
       </NavbarContent>
-      <NavbarMenu className="pt-6 pb-8 px-6 bg-white/95 backdrop-blur-xl flex flex-col gap-3 shadow-[0_8px_30px_rgba(0,0,0,0.08)] border-t border-gray-100/50">
+      <NavbarMenu className="pt-6 pb-8 px-6 bg-white flex flex-col gap-3 shadow-[0_8px_30px_rgba(0,0,0,0.08)] border-t border-gray-100/50">
         {MENU_ITEMS.map((item, index) => {
           const isActive = pathname === item.href;
           return (

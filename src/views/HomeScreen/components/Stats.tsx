@@ -35,14 +35,12 @@ const Stats = () => {
 
   return (
     <div className="w-full bg-gradient-to-r from-[#0f172a] to-[#1e293b] py-24 text-white relative overflow-hidden">
-      {/* Glow effect */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-blue-600/20 blur-[100px] rounded-full pointer-events-none" />
-      
+
       <div className="relative z-10 w-full lg:w-4/5 mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 px-6">
         {stats.map((item, index) => (
           <motion.div 
             key={index} 
-            className="flex flex-col items-center text-center gap-3 p-6 bg-white/5 rounded-2xl border border-white/10 backdrop-blur-md hover:border-[#1761b6]/50 hover:bg-white/10 transition-all duration-300 group"
+            className="flex flex-col items-center text-center gap-3 p-6 bg-white/5 rounded-2xl border border-white/10 hover:border-[#1761b6]/50 hover:bg-white/10 transition-all duration-300 group"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -51,7 +49,7 @@ const Stats = () => {
             <div className="p-4 bg-white/5 rounded-xl group-hover:bg-[#1761b6]/20 transition-colors">
               <item.icon size={32} className="text-[#4ea5ff] group-hover:scale-110 transition-transform" />
             </div>
-            <span className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+            <span className="text-4xl md:text-5xl font-bold text-white">
               <Counter value={item.value} />{item.suffix}
             </span>
             <span className="text-sm text-gray-400 font-light tracking-wide">{item.label}</span>
