@@ -13,7 +13,7 @@ const HomeScreen = () => {
   return (
     <div className="w-full flex flex-col">
       
-      {/* <Banner /> */}
+      <Banner />
       <Solution />
       <Stats />
       <div className="py-10">
