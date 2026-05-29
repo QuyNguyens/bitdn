@@ -3,13 +3,23 @@
 import { useI18n } from '@/i18n/I18nProvider';
 import Image from 'next/image';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { useRef } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import { ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 
 const Banner = () => {
   const { t } = useI18n();
   const bannerRef = useRef(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   const { scrollYProgress } = useScroll({
     target: bannerRef,
@@ -100,8 +110,8 @@ const Banner = () => {
           {slogan.map((word, index) => (
             <motion.span
               key={index}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, y: 20, filter: isMobile ? 'none' : 'blur(10px)' }}
+              animate={{ opacity: 1, y: 0, filter: isMobile ? 'none' : 'blur(0px)' }}
               transition={{
                 duration: 0.6,
                 delay: index * 0.15 + 0.5,

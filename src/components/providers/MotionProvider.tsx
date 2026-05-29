@@ -1,6 +1,6 @@
 'use client';
 
-import { MotionConfig } from 'framer-motion';
+import { MotionConfig, MotionGlobalConfig } from 'framer-motion';
 import { useEffect, useState } from 'react';
 
 export default function MotionProvider({ children }: { children: React.ReactNode }) {
@@ -8,7 +8,9 @@ export default function MotionProvider({ children }: { children: React.ReactNode
 
   useEffect(() => {
     const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768);
+      const mobile = window.innerWidth < 768;
+      setIsMobile(mobile);
+      MotionGlobalConfig.skipAnimations = mobile;
     };
     
     checkMobile();
