@@ -13,7 +13,9 @@ const Solution = () => {
   return (
     <WrapComponent>
       <div className="relative flex flex-col lg:flex-row p-6 lg:p-12 w-full gap-12 lg:w-5/6 items-center glassmorphism rounded-3xl mt-12 mb-8 shadow-xl overflow-hidden">
-
+        {/* Decorative background glow */}
+        <div className="absolute top-[-20%] left-[-10%] w-[50%] h-[50%] bg-blue-400/20 blur-[120px] rounded-full z-0 pointer-events-none" />
+        <div className="absolute bottom-[-20%] right-[-10%] w-[50%] h-[50%] bg-blue-600/10 blur-[100px] rounded-full z-0 pointer-events-none" />
 
         {/* Image */}
         <motion.div

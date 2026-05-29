@@ -2,7 +2,7 @@
 
 import { useParams } from 'next/navigation';
 import { useI18n } from '@/i18n/I18nProvider';
-import { motion } from 'framer-motion';
+import { motion, useScroll, useSpring } from 'framer-motion';
 import { 
   ChevronRight, 
   CheckCircle2, 
@@ -36,10 +36,21 @@ export default function AboutUsDetailPage() {
 
   const slugConfig = SLUG_DETAILS_DATA[slug] || SLUG_DETAILS_DATA.default;
 
-
+  const { scrollYProgress } = useScroll();
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001
+  });
 
   return (
     <div className="flex flex-col min-h-screen bg-gray-50">
+      {/* Progress Bar */}
+      <motion.div
+        className="fixed top-0 left-0 right-0 h-1.5 bg-blue-600 z-[100] origin-left"
+        style={{ scaleX }}
+      />
+
       {/* Hero Section */}
       <div className="w-full bg-gradient-to-r from-[#1761b6] to-[#0b3d7a] text-white pt-32 pb-20 relative overflow-hidden">
         {/* Decorative elements */}
