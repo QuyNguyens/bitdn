@@ -91,11 +91,10 @@ export default function HeaderBottom() {
           </NextLink>
         </NavbarItem>
         <NavbarItem>
-          {/* <LanguageSwitcher /> */}
-          <span>SELECTED LANGUAGE</span>
+          <LanguageSwitcher />
         </NavbarItem>
       </NavbarContent>
-      <NavbarMenu className="pt-6 pb-8 px-6 bg-white flex flex-col gap-3 shadow-[0_8px_30px_rgba(0,0,0,0.08)] border-t border-gray-100/50">
+      {/* <NavbarMenu className="pt-6 pb-8 px-6 bg-white flex flex-col gap-3 shadow-[0_8px_30px_rgba(0,0,0,0.08)] border-t border-gray-100/50">
         {MENU_ITEMS.map((item, index) => {
           const isActive = pathname === item.href;
           return (
@@ -124,7 +123,7 @@ export default function HeaderBottom() {
             {t('common.contact')}
           </NextLink>
         </NavbarMenuItem>
-      </NavbarMenu>
+      </NavbarMenu> */}
     </Navbar>
   );
 }
