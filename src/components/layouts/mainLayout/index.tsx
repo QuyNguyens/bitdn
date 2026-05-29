@@ -18,7 +18,7 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
         className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#1761b6] to-[#4ea5ff] origin-left z-50"
         style={{ scaleX }}
       />
-      {/* <HeaderBottom /> */}
+      <HeaderBottom />
       {children}
       <Footer />
     </main>
