@@ -48,42 +48,6 @@ export default function HeaderBottom() {
           </NextLink>
         </NavbarBrand>
       </NavbarContent>
-      <NavbarContent className="hidden sm:flex gap-12" justify="center">
-        {MENU_ITEMS.map((item) => {
-          const isActive = pathname === item.href;
-
-          return (
-            <NavbarItem key={item.label}>
-              <motion.div
-                className="relative"
-                initial="rest"
-                animate={isActive ? 'hover' : 'rest'}
-                whileHover="hover"
-              >
-                <NextLink
-                  href={item.href}
-                  className={`
-              relative pb-1 font-medium transition-colors
-              ${isActive ? 'text-primary' : 'text-gray-900 hover:text-primary'}
-            `}
-                >
-                  {t(item.label)}
-                </NextLink>
-
-                {/* Underline */}
-                <motion.span
-                  variants={{
-                    rest: { scaleX: 0 },
-                    hover: { scaleX: 1 },
-                  }}
-                  transition={{ duration: 0.25, ease: 'easeInOut' }}
-                  className="absolute left-0 -bottom-1 h-0.5 w-full origin-left bg-primary"
-                />
-              </motion.div>
-            </NavbarItem>
-          );
-        })}
-      </NavbarContent>
       <NavbarContent justify="end" className="gap-4">
         <NavbarItem className="hidden md:flex">
           <NextLink href="/contact" className="btn-primary text-xs px-5 py-2.5 shadow-sm">
@@ -94,7 +58,7 @@ export default function HeaderBottom() {
           <LanguageSwitcher />
         </NavbarItem>
       </NavbarContent>
-      {/* <NavbarMenu className="pt-6 pb-8 px-6 bg-white flex flex-col gap-3 shadow-[0_8px_30px_rgba(0,0,0,0.08)] border-t border-gray-100/50">
+      <NavbarMenu className="pt-6 pb-8 px-6 bg-white flex flex-col gap-3 shadow-[0_8px_30px_rgba(0,0,0,0.08)] border-t border-gray-100/50">
         {MENU_ITEMS.map((item, index) => {
           const isActive = pathname === item.href;
           return (
@@ -123,7 +87,7 @@ export default function HeaderBottom() {
             {t('common.contact')}
           </NextLink>
         </NavbarMenuItem>
-      </NavbarMenu> */}
+      </NavbarMenu>
     </Navbar>
   );
 }
