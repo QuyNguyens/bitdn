@@ -9,8 +9,8 @@ import {
   NavbarMenuToggle,
   NavbarMenu,
   NavbarMenuItem,
+  Link,
 } from '@heroui/react';
-import NextLink from 'next/link';
 import { MENU_ITEMS } from '@/constants/routes';
 import { usePathname } from 'next/navigation';
 import LanguageSwitcher from './LanguageSwitcher';
@@ -25,7 +25,7 @@ export default function HeaderBottom() {
 
   return (
     <Navbar
-      className="sticky top-0 z-50 bg-white border-b border-gray-100/50 shadow-[0_4px_30px_rgba(0,0,0,0.03)] px-2"
+      className="sticky top-0 z-50 bg-white/95 border-b border-gray-100/50 shadow-[0_4px_30px_rgba(0,0,0,0.03)] px-2"
       maxWidth="xl"
       onMenuOpenChange={setIsMenuOpen}
       isMenuOpen={isMenuOpen}
@@ -36,7 +36,7 @@ export default function HeaderBottom() {
           className="sm:hidden"
         />
         <NavbarBrand className="h-10 flex items-center">
-          <NextLink href="/" aria-label="Go to home">
+          <Link href="/" aria-label="Go to home">
             <Image
               src="/logo/logo_bit.png"
               alt="logo bitdn"
@@ -45,14 +45,50 @@ export default function HeaderBottom() {
               className="h-14 w-auto object-contain cursor-pointer"
               priority
             />
-          </NextLink>
+          </Link>
         </NavbarBrand>
+      </NavbarContent>
+      <NavbarContent className="hidden sm:flex gap-12" justify="center">
+        {MENU_ITEMS.map((item) => {
+          const isActive = pathname === item.href;
+
+          return (
+            <NavbarItem key={item.label}>
+              <motion.div
+                className="relative"
+                initial="rest"
+                animate={isActive ? 'hover' : 'rest'}
+                whileHover="hover"
+              >
+                <Link
+                  href={item.href}
+                  className={`
+              relative pb-1 font-medium transition-colors
+              ${isActive ? 'text-primary' : 'text-gray-900 hover:text-primary'}
+            `}
+                >
+                  {t(item.label)}
+                </Link>
+
+                {/* Underline */}
+                <motion.span
+                  variants={{
+                    rest: { scaleX: 0 },
+                    hover: { scaleX: 1 },
+                  }}
+                  transition={{ duration: 0.25, ease: 'easeInOut' }}
+                  className="absolute left-0 -bottom-1 h-0.5 w-full origin-left bg-primary"
+                />
+              </motion.div>
+            </NavbarItem>
+          );
+        })}
       </NavbarContent>
       <NavbarContent justify="end" className="gap-4">
         <NavbarItem className="hidden md:flex">
-          <NextLink href="/contact" className="btn-primary text-xs px-5 py-2.5 shadow-sm">
+          <Link href="/contact" className="btn-primary text-xs px-5 py-2.5 shadow-sm">
             {t('common.contact')}
-          </NextLink>
+          </Link>
         </NavbarItem>
         <NavbarItem>
           <LanguageSwitcher />
@@ -63,29 +99,30 @@ export default function HeaderBottom() {
           const isActive = pathname === item.href;
           return (
             <NavbarMenuItem key={`${item.label}-${index}`}>
-              <NextLink
+              <Link
                 className={`w-full flex items-center px-5 py-3.5 rounded-2xl transition-all duration-300 ${
                   isActive
                     ? 'bg-primary/10 text-primary font-semibold shadow-sm'
                     : 'text-gray-700 hover:bg-gray-50 hover:text-primary font-medium'
                 }`}
                 href={item.href}
+                size="lg"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {t(item.label)}
-              </NextLink>
+              </Link>
             </NavbarMenuItem>
           );
         })}
         
         <NavbarMenuItem className="mt-4 pt-6 border-t border-gray-100/80 md:hidden">
-          <NextLink
+          <Link
             href="/contact"
             className="w-full flex justify-center btn-primary py-3.5 rounded-2xl shadow-md font-medium text-white transition-transform active:scale-95"
             onClick={() => setIsMenuOpen(false)}
           >
             {t('common.contact')}
-          </NextLink>
+          </Link>
         </NavbarMenuItem>
       </NavbarMenu>
     </Navbar>
