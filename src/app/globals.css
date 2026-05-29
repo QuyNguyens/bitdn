@@ -260,4 +260,20 @@ body {
     font-size: 0.65rem;
     padding: 0.25rem 0.75rem;
   }
+  
+  /* Disable CSS animations on mobile to reduce lag */
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  .animate-marquee,
+  .animate-float,
+  .animate-pulse-glow,
+  .animate-gradient,
+  .animate-shimmer {
+    animation: none !important;
+  }
 }
